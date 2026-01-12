@@ -9,20 +9,25 @@ body {
 
 header {
     background: #F6F6F6;
-    padding: 20px;
     box-shadow: inset 0px 0px 1000px #000;
+    padding: 20px;
 }
 
 .banner {
-    position: relative;
-    width: 940px;
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
     margin: 0 auto;
 }
 
+.banner img, .logo {
+    width: 200px;
+}
+
 .navegacao {
-    position: absolute;
-    top: 110px;
-    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .lista {
@@ -68,20 +73,20 @@ header {
     margin: 0 20px 5px 0;
 }
 
-.sobre-alura {
+.sobre-barbershop {
     width: 940px;
     margin: 1.5em auto 1.25em;
     display: block;
     text-align: left;
 }
 
-.div-titulo-main {
+.icone-e-titulo {
     width: auto;
     margin: 1.5em auto 1.25em;
     text-align: center;
 }
 
-#img-icon-principal {
+#img-icon-top-titulo {
     display: inline-block;
     width: 10px;
     height: auto;
@@ -105,7 +110,7 @@ section p {
     line-height: 1.5rem;
 }
 
-.mapa {
+.nosso-estabelecimento {
     background: linear-gradient(#FEFEFE,#888);
 }
 
@@ -115,12 +120,19 @@ section p {
 
 .mapa-conteudo {
     width: 940px;
-    margin: 1.5em auto 0;
+    margin: 3em auto 0;
     text-align: center;
 }
 
-.conteudo-beneficios .titulo-principal {
+/* .conteudo-beneficios .titulo-principal {
     display: block;
+} */
+
+.icone-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+
 }
 
 .beneficios {
@@ -180,6 +192,10 @@ section p {
     text-align: center;
 }
 
+.rodape img {
+    width: 200px;
+}
+
 #copyright {
     color: #f6f6f6;
     font-size: 12px;
@@ -188,7 +204,7 @@ section p {
 
 @media screen and (max-width: 480px) {
 
-    .banner, .principal, .sobre-alura, .conteudo-beneficios, .mapa-conteudo, .video {
+    .banner, .principal, .sobre-barbershop, .conteudo-beneficios, .mapa-conteudo, .video {
         width: 100%;
     }
 
@@ -219,10 +235,10 @@ section p {
     }
 
     .img-utensilios {
-        width: 40%;
+        width: 8px;
     }
 
-    .sobre-alura {
+    .sobre-barbershop {
         width: auto;
         padding: 0 30px;
     }
