@@ -1,8 +1,11 @@
 :root {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 18px;
-    /* color: var(--dark-color); */
-    --dark-color: #242524
+    --dark-gray: #242524;
+    --black: #121212;
+    --white: #FEFEFE;
+    --hover: #bd7a22;
+    --active: #5b1023;
 }
 
 header {
