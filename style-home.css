@@ -63,8 +63,9 @@ header {
 }
 
 .main-sections {
-    width: 70%;
-    margin: 3em auto
+    width: 940px;
+    margin: 0 auto;
+    padding: 3em 0;
 }
 
 .main-sections p{
@@ -87,16 +88,9 @@ header {
     margin: 0 20px 5px 0;
 }
 
-.sobre-barbershop {
-    width: 940px;
-    margin: 1.5em auto 1.25em;
-    display: block;
-    text-align: left;
-}
-
 .icone-e-titulo {
     width: auto;
-    margin: 1.5em auto 1.25em;
+    margin: 0 auto 1.25em;
     text-align: center;
 }
 
@@ -124,13 +118,8 @@ section p {
     line-height: 1.5rem;
 }
 
-/* .nosso-estabelecimento {
-    /* background: linear-gradient(#FEFEFE,#121212); */
-/* } */
-
-
 .mapa-conteudo {
-    width: 940px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
 }
@@ -139,7 +128,6 @@ section p {
     display: flex;
     align-items: center;
     justify-content: center;    
-
 }
 
 .beneficios {
@@ -147,9 +135,6 @@ section p {
 }
 
 .conteudo-beneficios {
-    margin: 0 auto;
-    padding: 2em 0;
-    width: 740px;
     text-align: left;
 }
 
@@ -189,7 +174,7 @@ section p {
 
 .video {
     width: 560px;
-    margin: 5em auto;
+    margin: 2em auto 0;
 }
 
 .rodape {
