@@ -1,7 +1,7 @@
 :root {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
-    --dark-gray: #242524;
+    --dark-gray: #252525;
     --black: #121212;
     --white: #FEFEFE;
     --hover: #bd7a22;
@@ -9,7 +9,7 @@
 }
 
 body {
-    background: linear-gradient(var(--white),var(--dark-gray));
+    background-color: var(--white);
 }
 
 header {
@@ -49,7 +49,7 @@ header {
 }
 
 .lista-link:hover {
-    color: (--hover);
+    color: var(--hover);
     text-decoration: underline;
 }
 
@@ -60,15 +60,35 @@ header {
 .img-banner {
     width: 100vw;
     margin: 0 auto;
+    display: block;
+}
+
+/* Estilização das Seções Intercaladas */
+.sobre-barber-shop {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.conteudo-beneficios {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.nosso-estabelecimento {
+    background-color: var(--dark-gray);
+    color: var(--white);
 }
 
 .main-sections {
-    width: 940px;
-    margin: 0 auto;
-    padding: 1.5em 0;
+    padding: 3em 0;
 }
 
-.main-sections p{
+.main-sections-container {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.main-sections p {
     font-weight: 400;
 }
 
@@ -80,6 +100,12 @@ header {
     font-weight: 700;
     color: var(--active);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajuste de sombra para títulos em fundos escuros */
+.conteudo-beneficios .titulo-principal,
+.nosso-estabelecimento .titulo-principal {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .img-utensilios {
@@ -132,10 +158,6 @@ section p {
 
 .beneficios {
     width: 100%
-}
-
-.conteudo-beneficios {
-    text-align: left;
 }
 
 .lista-beneficios {
@@ -194,48 +216,21 @@ section p {
 }
 
 @media screen and (max-width: 480px) {
-
-    .banner, .principal, .sobre-barbershop, .conteudo-beneficios, .mapa-conteudo, .video {
+    .main-sections-container {
         width: 100%;
-    }
-
-    .banner {
-        text-align: center;
-    }
-
-    .img-banner, .div-titulo-main .titulo-principal {
-        display: inline;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
 
     .img-banner {
-        width: 140%;
-    }
-
-    .div-titulo-main .titulo-principal {
-        margin-bottom: 20px;
-    }
-
-    .navegacao {
-        position: static;
-        padding: 10px 5px 20px;
-    }
-
-    .lista {
-        font-size: 12px;
-        margin-left: 8px;
-    }
-
-    .img-utensilios {
-        width: 8px;
-    }
-
-    .sobre-barbershop {
-        width: auto;
-        padding: 0 30px;
+        width: 100%;
     }
 
     .lista-beneficios, .img-beneficios {
         width: 100%;
     }
 
+    .video {
+        width: 100%;
+    }
 }
