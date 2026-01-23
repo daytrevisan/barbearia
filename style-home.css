@@ -1,30 +1,34 @@
 :root {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 18px;
+    --dark-gray: #242524;
+    --black: #121212;
+    --white: #FEFEFE;
+    --hover: #bd7a22;
+    --active: #5b1023;
 }
 
 body {
-    background-color: #FEFEFE;
+    background: linear-gradient(var(--white),var(--dark-gray));
 }
 
 header {
-    background: #F6F6F6;
-    box-shadow: inset 0px 0px 1000px #000;
+    background: url("./img/bg.jpg");
     padding: 20px;
 }
 
-.banner {
+.navbar {
     display: flex;
     justify-content: space-between;
     width: 80vw;
     margin: 0 auto;
 }
 
-.banner img, .logo {
+.navbar img, .logo {
     width: 200px;
 }
 
-.navegacao {
+.navbar-icons {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -41,20 +45,30 @@ header {
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
-    color: #241714;
+    color: var(--white);
 }
 
 .lista-link:hover {
-    color: #5b1023;
+    color: (--hover);
     text-decoration: underline;
 }
 
 .lista-link:active {
-    color: #bd7a22;
+    color: var(--active);
 }
 
 .img-banner {
-    width: 100%;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.main-sections {
+    width: 70%;
+    margin: 3em auto
+}
+
+.main-sections p{
+    font-weight: 400;
 }
 
 .titulo-principal {
@@ -62,13 +76,13 @@ header {
     text-align: center;
     padding: 0.25em 0 0.75em;
     font-size: 1.75em;
-    font-weight: 500;
-    color: #680a1d;
-    text-shadow: #241714 0.03em 0.03em 0.08em;
+    font-weight: 700;
+    color: var(--active);
+    text-shadow: var(--dark-color) 0.03em 0.03em 0.08em;
 }
 
 .img-utensilios {
-    width: calc(30% - 26px);
+    width: 20%;
     float: left;
     margin: 0 20px 5px 0;
 }
@@ -101,7 +115,7 @@ p em {
 }
 
 p em strong {
-    color: #680a1d;
+    color: var(--active);
     font-style: italic;
 }
 
@@ -110,23 +124,16 @@ section p {
     line-height: 1.5rem;
 }
 
-.nosso-estabelecimento {
-    background: linear-gradient(#FEFEFE,#888);
-}
+/* .nosso-estabelecimento {
+    /* background: linear-gradient(#FEFEFE,#121212); */
+/* } */
 
-.mapa p {
-    margin-bottom: 0.75em;
-}
 
 .mapa-conteudo {
     width: 940px;
-    margin: 3em auto 0;
+    margin: 0 auto;
     text-align: center;
 }
-
-/* .conteudo-beneficios .titulo-principal {
-    display: block;
-} */
 
 .icone-titulo {
     display: flex;
@@ -136,8 +143,7 @@ section p {
 }
 
 .beneficios {
-    width: 100%;
-    background-color: #888;
+    width: 100%
 }
 
 .conteudo-beneficios {
@@ -183,7 +189,7 @@ section p {
 
 .video {
     width: 560px;
-    margin: 3em auto 2em;
+    margin: 5em auto;
 }
 
 .rodape {
