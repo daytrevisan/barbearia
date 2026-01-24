@@ -70,12 +70,12 @@ header {
 }
 
 .conteudo-beneficios {
-    background-color: var(--black);
+    background-color: var(--dark-gray);
     color: var(--white);
 }
 
 .nosso-estabelecimento {
-    background-color: var(--dark-gray);
+    background-color: var(--black);
     color: var(--white);
 }
 
