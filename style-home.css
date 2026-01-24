@@ -201,6 +201,14 @@ section p {
     color: var(--black);
 }
 
+.produtos-lista img {
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .produtos-lista:hover {
     border: 2px solid var(--active);
     border-top: 8px solid var(--active);
