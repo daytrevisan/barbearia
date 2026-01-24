@@ -13,7 +13,7 @@
     background-color: var(--black);
 }
 
-/* Lado Esquerdo: Imagem ampla com ajuste de corte */
+/* Lado Esquerdo: Imagem ampla com ajuste de corte pela esquerda */
 .agendamento-coluna-imagem {
     grid-column: 1;
     background-color: #1a1a1a;
@@ -26,11 +26,11 @@
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    /* Ajustado para focar na placa "OPEN" que está mais à direita na imagem original */
-    object-position: 85% center; 
+    /* Ajustado para focar na placa "OPEN" cortando o lado esquerdo da imagem */
+    object-position: right center; 
 }
 
-/* Lado Direito: Div Única para Agendamento */
+/* Lado Direito: Div Única para Agendamento com Fundo Branco */
 .agendamento-coluna-conteudo-wrapper {
     grid-column: 2;
     display: flex;
@@ -38,7 +38,7 @@
     justify-content: center;
     align-items: center;
     padding: 40px;
-    background-color: var(--black);
+    background-color: var(--white); /* Restaurado fundo branco para a coluna de conteúdo */
     overflow-y: auto;
 }
 
@@ -46,9 +46,7 @@
     width: 100%;
     max-width: 500px;
     background-color: var(--white);
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-    padding: 40px;
+    padding: 20px;
 }
 
 .titulo-principal {
