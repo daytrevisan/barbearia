@@ -30,13 +30,9 @@
     </header>
 
     <main class="contato-principal">
-        <section class="contato-container">
-            <div class="contato-grid">
-                <div class="contato-imagem">
-                    <img src="./img/contato-bg.jpg" alt="Interior da Barbearia">
-                </div>
-                
-                <div class="contato-formulario">
+        <div class="contato-wrapper">
+            <section class="contato-secao-formulario">
+                <div class="contato-card">
                     <h1 class="titulo-principal">Fale Conosco</h1>
                     <form>
                         <div class="input-group">
@@ -84,32 +80,41 @@
                         <button type="submit" id="botao-envio">Enviar Mensagem</button>
                     </form>
                 </div>
-            </div>
+            </section>
 
-            <div class="horarios-atendimento">
-                <h2 class="titulo-principal">Horários de Atendimento</h2>
-                <table class="tabela-horarios">
-                    <thead>
-                        <tr>
-                            <th>Dia</th>
-                            <th>Horários</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Segunda</td>
-                            <td rowspan="3">08h às 20h</td>
-                        </tr>
-                        <tr>
-                            <td>Quarta</td>
-                        </tr>
-                        <tr>
-                            <td>Sexta</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+            <aside class="contato-secao-imagem">
+                <div class="imagem-open-container">
+                    <img src="./img/contato-open.jpg" alt="Barbearia Aberta" class="img-open">
+                    <div class="imagem-overlay">
+                        <p>Estamos esperando por você!</p>
+                    </div>
+                </div>
+                
+                <div class="horarios-card">
+                    <h2 class="titulo-principal">Horários</h2>
+                    <table class="tabela-horarios">
+                        <thead>
+                            <tr>
+                                <th>Dia</th>
+                                <th>Horários</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Segunda</td>
+                                <td rowspan="3">08h às 20h</td>
+                            </tr>
+                            <tr>
+                                <td>Quarta</td>
+                            </tr>
+                            <tr>
+                                <td>Sexta</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </aside>
+        </div>
     </main>
 
     <footer class="rodape">
