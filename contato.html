@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style-contato.css">
     <link rel="stylesheet" href="reset.css">
-    <title>Contato</title>
+    <link rel="stylesheet" href="./style-home.css">
+    <link rel="stylesheet" href="./style-contato.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Contato - Barber Shop</title>
 </head>
 <body>
     <header>
-        <section class="banner">
-            <img src="./img/logo-barber-bg-white.png" alt="Logo da Barbearia" id="logo">
-            <nav class="navegacao">
+        <section class="navbar">
+            <img src="./img/logo-barber-bg-black.png" alt="Logo da Barbearia" id="logo">
+            <nav class="navbar-icons">
                 <ul>
                     <li class="lista"><a href="./index.html#home" class="lista-link">Home</a></li>
                     <li class="lista"><a href="./index.html#sobre" class="lista-link">Sobre</a></li>
@@ -25,68 +29,87 @@
         </section>
     </header>
 
-    <main>
-        <form>
-            <label for="nome-e-sobrenome">Nome e sobrenome</label>
-            <input type="text" id="nome-e-sobrenome" class="input-padrao" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" class="input-padrao" placeholder="seuemail@dominio.com" required>
-
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" class="input-padrao" placeholder="(XX) XXXXX-XXXX" required>
-
-            <label for="contato-mensagem">Mensagem</label>
-            <textarea name="mensagem" id="mensagem" cols="30" rows="10" class="input-padrao" required></textarea>
-            
-            <fieldset class="secao-contato">
-                <legend>Como prefere nosso contato?</legend>
-                <label for="radio-email"><input type="radio" name="contato-opcoes" value="Email" class="input-contato">Email</label>            
+    <main class="contato-principal">
+        <section class="contato-container">
+            <div class="contato-grid">
+                <div class="contato-imagem">
+                    <img src="./img/contato-bg.jpg" alt="Interior da Barbearia">
+                </div>
                 
-                <label for="radio-telefone"><input type="radio" name="contato-opcoes" value="Telefone" class="input-contato">Telefone</label>            
-                
-                <label for="radio-whatsapp"><input type="radio" name="contato-opcoes" value="Whatsapp" class="input-contato" checked>Whatsapp</label>            
-            </fieldset>
-                    
-            <fieldset class="secao-contato">
-                <legend for="contato-horario">Qual horário prefere ser atendido?</legend>
-                <select>
-                    <option class="opcoes-periodo">Manhã</option>
-                    <option class="opcoes-periodo">Tarde</option>
-                    <option class="opcoes-periodo">Noite</option>
-                </select>
-            </fieldset>
+                <div class="contato-formulario">
+                    <h1 class="titulo-principal">Fale Conosco</h1>
+                    <form>
+                        <div class="input-group">
+                            <label for="nome-e-sobrenome">Nome e sobrenome</label>
+                            <input type="text" id="nome-e-sobrenome" class="input-padrao" placeholder="Seu nome completo" required>
+                        </div>
 
-            <fieldset class="secao-contato">
-                <legend id="checkbox"><input type="checkbox" checked>Gostaria de receber nossas novidades por email</legend>
-            </fieldset>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="input-padrao" placeholder="seuemail@dominio.com" required>
+                        </div>
 
-            <fieldset class="secao-contato">
-                <input type="button" value="Enviar formulário" id="botao-envio">
-            </fieldset>
-        </form>
+                        <div class="input-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" class="input-padrao" placeholder="(XX) XXXXX-XXXX" required>
+                        </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Dia</th>
-                    <th>Horários</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Segunda</td>
-                    <td rowspan="3">Das 8h-20h</td>
-                </tr>
-                <tr>
-                    <td>Quarta</td>
-                </tr>
-                <tr>
-                    <td>Sexta</td>
-                </tr>
-            </tbody>
-            
-        </table>
+                        <div class="input-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" cols="30" rows="5" class="input-padrao" placeholder="Como podemos ajudar?" required></textarea>
+                        </div>
+                        
+                        <fieldset class="secao-contato">
+                            <legend>Como prefere nosso contato?</legend>
+                            <div class="radio-group">
+                                <label for="radio-email"><input type="radio" name="contato-opcoes" value="Email" id="radio-email"> Email</label>            
+                                <label for="radio-telefone"><input type="radio" name="contato-opcoes" value="Telefone" id="radio-telefone"> Telefone</label>            
+                                <label for="radio-whatsapp"><input type="radio" name="contato-opcoes" value="Whatsapp" id="radio-whatsapp" checked> Whatsapp</label>            
+                            </div>
+                        </fieldset>
+                                
+                        <fieldset class="secao-contato">
+                            <legend>Qual horário prefere ser atendido?</legend>
+                            <select class="select-padrao">
+                                <option>Manhã</option>
+                                <option>Tarde</option>
+                                <option>Noite</option>
+                            </select>
+                        </fieldset>
+
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" checked> Gostaria de receber nossas novidades por email</label>
+                        </div>
+
+                        <button type="submit" id="botao-envio">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="horarios-atendimento">
+                <h2 class="titulo-principal">Horários de Atendimento</h2>
+                <table class="tabela-horarios">
+                    <thead>
+                        <tr>
+                            <th>Dia</th>
+                            <th>Horários</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Segunda</td>
+                            <td rowspan="3">08h às 20h</td>
+                        </tr>
+                        <tr>
+                            <td>Quarta</td>
+                        </tr>
+                        <tr>
+                            <td>Sexta</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <footer class="rodape">
