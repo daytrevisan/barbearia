@@ -234,12 +234,7 @@ section p {
     min-height: 3em;
 }
 
-.produtos-preco {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: var(--active);
-}
+
 
 /* Layout Flex para Benefícios e Vídeo */
 .beneficios-flex-container {
