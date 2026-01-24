@@ -136,7 +136,8 @@ p em {
 
 p em strong {
     font-style: italic;
-    font-weight: bold;
+    font-weight: normal;
+    color: inherit;
 }
 
 section p {
