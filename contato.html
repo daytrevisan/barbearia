@@ -30,8 +30,12 @@
     </header>
 
     <main class="contato-principal">
-        <div class="contato-wrapper">
-            <section class="contato-secao-formulario">
+        <div class="contato-split-container">
+            <section class="contato-lado-imagem">
+                <img src="./img/contato-open.jpg" alt="Barbearia Aberta - OPEN" class="img-full-open">
+            </section>
+
+            <section class="contato-lado-conteudo">
                 <div class="contato-card">
                     <h1 class="titulo-principal">Fale Conosco</h1>
                     <form>
@@ -52,7 +56,7 @@
 
                         <div class="input-group">
                             <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" cols="30" rows="5" class="input-padrao" placeholder="Como podemos ajudar?" required></textarea>
+                            <textarea id="mensagem" cols="30" rows="4" class="input-padrao" placeholder="Como podemos ajudar?" required></textarea>
                         </div>
                         
                         <fieldset class="secao-contato">
@@ -79,41 +83,26 @@
 
                         <button type="submit" id="botao-envio">Enviar Mensagem</button>
                     </form>
-                </div>
-            </section>
 
-            <aside class="contato-secao-imagem">
-                <div class="imagem-open-container">
-                    <img src="./img/contato-open.jpg" alt="Barbearia Aberta" class="img-open">
-                    <div class="imagem-overlay">
-                        <p>Estamos esperando por você!</p>
+                    <div class="horarios-contato">
+                        <h2 class="titulo-principal">Horários</h2>
+                        <table class="tabela-horarios">
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Horários</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Segunda, Quarta e Sexta</td>
+                                    <td>08h às 20h</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                
-                <div class="horarios-card">
-                    <h2 class="titulo-principal">Horários</h2>
-                    <table class="tabela-horarios">
-                        <thead>
-                            <tr>
-                                <th>Dia</th>
-                                <th>Horários</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Segunda</td>
-                                <td rowspan="3">08h às 20h</td>
-                            </tr>
-                            <tr>
-                                <td>Quarta</td>
-                            </tr>
-                            <tr>
-                                <td>Sexta</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </aside>
+            </section>
         </div>
     </main>
 
