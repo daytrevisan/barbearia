@@ -8,6 +8,10 @@
     --active: #5b1023;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--black);
 }
@@ -15,6 +19,9 @@ body {
 header {
     background: url("./img/bg.jpg");
     padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar {
@@ -44,8 +51,9 @@ header {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px;
     color: var(--white);
+    transition: 0.3s;
 }
 
 .lista-link:hover {
@@ -63,24 +71,9 @@ header {
     display: block;
 }
 
-/* Estilização das Seções Intercaladas: PRETO, BRANCO, PRETO */
-.sobre-barber-shop {
-    background-color: var(--black);
-    color: var(--white);
-}
-
-.conteudo-beneficios {
-    background-color: var(--white);
-    color: var(--black);
-}
-
-.nosso-estabelecimento {
-    background-color: var(--black);
-    color: var(--white);
-}
-
+/* Estilização das Seções Intercaladas */
 .main-sections {
-    padding: 3em 0;
+    padding: 5em 0;
 }
 
 .main-sections-container {
@@ -101,28 +94,6 @@ header {
     color: var(--active);
 }
 
-/* Título branco para a seção Sobre a Barber Shop para contraste total */
-.sobre-barber-shop .titulo-principal {
-    color: var(--white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Sombra em tom dourado/âmbar para o título Nosso estabelecimento */
-.nosso-estabelecimento .titulo-principal {
-    text-shadow: 2px 2px 10px rgba(189, 122, 34, 0.5);
-}
-
-/* Sombra Escura para títulos em fundo branco */
-.conteudo-beneficios .titulo-principal {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.img-utensilios {
-    width: 20%;
-    float: left;
-    margin: 0 20px 5px 0;
-}
-
 .icone-e-titulo {
     width: auto;
     margin: 0 auto 1.5rem;
@@ -136,6 +107,54 @@ header {
     padding-right: 10px;
     top: 10%;
     transform: translate(0, 20%);
+}
+
+/* 1. Sobre (Escuro) */
+.sobre-barber-shop {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.sobre-barber-shop .titulo-principal {
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 2. Serviços (Branco) */
+.servicos {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.servicos .titulo-principal {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. Benefícios (Escuro) */
+.conteudo-beneficios {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.conteudo-beneficios .titulo-principal {
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 4. Localização (Branco) */
+.nosso-estabelecimento {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.nosso-estabelecimento .titulo-principal {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.img-utensilios {
+    width: 20%;
+    float: left;
+    margin: 0 20px 5px 0;
 }
 
 p em {
@@ -154,111 +173,7 @@ section p {
     line-height: 1.5rem;
 }
 
-.mapa-conteudo {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.icone-titulo {
-    display: flex;
-    align-items: center;
-    justify-content: center;    
-}
-
-/* Layout Flex para Benefícios e Vídeo */
-.beneficios-flex-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.beneficios-conteudo {
-    width: 50%;
-}
-
-.video-container {
-    width: 45%;
-}
-
-.lista-beneficios {
-    width: 100%;
-    padding: 10px 0;
-    list-style-type: none;
-}
-
-.lista-item {
-    padding: 10px 5px 5px;
-}
-
-.lista-item:first-child {
-    font-weight: bold;
-}
-
-.lista-item:before {
-    content: "✄";
-    padding-right: 5px;
-}
-
-.img-beneficios {
-    width: 100%;
-    margin: 20px 0 0;
-    opacity: 1;
-    transition: 400ms;
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-}
-
-.img-beneficios:hover {
-    opacity: 0.7;
-}
-
-.rodape {
-    background: url("./img/bg.jpg");
-    padding: 20px 0;
-    text-align: center;
-}
-
-.rodape img {
-    width: 200px;
-}
-
-#copyright {
-    color: #f6f6f6;
-    font-size: 12px;
-    margin: 10px 0 0;
-}
-
-@media screen and (max-width: 480px) {
-    .main-sections-container {
-        width: 100%;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-
-    .beneficios-flex-container {
-        flex-direction: column;
-    }
-
-    .beneficios-conteudo, .video-container {
-        width: 100%;
-    }
-
-    .img-banner {
-        width: 100%;
-    }
-}
-
-/* Estilos da Seção de Serviços (antiga Produtos) */
-.servicos {
-    background-color: var(--white);
-    color: var(--black);
-}
-
-.servicos .titulo-principal {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
+/* Estilos da Seção de Serviços */
 .produtos {
     width: 100%;
     margin: 0 auto;
@@ -308,15 +223,110 @@ section p {
     margin-top: 20px;
 }
 
+/* Layout Flex para Benefícios e Vídeo */
+.beneficios-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.beneficios-conteudo {
+    width: 50%;
+}
+
+.video-container {
+    width: 45%;
+}
+
+.lista-beneficios {
+    width: 100%;
+    padding: 10px 0;
+    list-style-type: none;
+}
+
+.lista-item {
+    padding: 10px 5px 5px;
+}
+
+.lista-item:first-child {
+    font-weight: bold;
+}
+
+.lista-item:before {
+    content: "✄";
+    padding-right: 5px;
+}
+
+.img-beneficios {
+    width: 100%;
+    margin: 20px 0 0;
+    opacity: 1;
+    transition: 400ms;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.img-beneficios:hover {
+    opacity: 0.7;
+}
+
+.mapa-conteudo {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rodape {
+    background: url("./img/bg.jpg");
+    padding: 20px 0;
+    text-align: center;
+}
+
+.rodape img {
+    width: 200px;
+}
+
+#copyright {
+    color: #f6f6f6;
+    font-size: 12px;
+    margin: 10px 0 0;
+}
+
 @media screen and (max-width: 480px) {
+    .main-sections-container {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .beneficios-flex-container {
+        flex-direction: column;
+    }
+
+    .beneficios-conteudo, .video-container {
+        width: 100%;
+    }
+
+    .img-banner {
+        width: 100%;
+    }
+
     .produtos-lista {
         width: 80%;
         margin: 20px auto;
         display: block;
     }
-}
 
-/* Ajuste de rolagem suave para as âncoras */
-html {
-    scroll-behavior: smooth;
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-icons ul {
+        padding: 10px 0;
+    }
+
+    .lista {
+        margin: 5px;
+    }
 }
