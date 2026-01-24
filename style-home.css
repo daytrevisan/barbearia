@@ -101,9 +101,10 @@ header {
     color: var(--active);
 }
 
-/* Sombra branca para o título Sobre a Barber Shop para maior contraste */
+/* Título branco para a seção Sobre a Barber Shop para contraste total */
 .sobre-barber-shop .titulo-principal {
-    text-shadow: 2px 2px 12px rgba(255, 255, 255, 0.8);
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Sombra em tom dourado/âmbar para o título Nosso estabelecimento */
