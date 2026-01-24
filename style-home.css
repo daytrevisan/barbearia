@@ -173,62 +173,72 @@ section p {
     line-height: 1.5rem;
 }
 
-/* Estilos da Seção de Serviços */
+/* Estilos da Seção de Serviços - Sem Retângulos */
 .produtos {
     width: 100%;
     margin: 0 auto;
     padding: 20px 0;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .produtos-lista {
-    display: inline-block;
-    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     box-sizing: border-box;
-    padding: 30px 20px;
-    margin: 10px 1.25%;
+    padding: 20px;
+    margin: 10px;
     width: 30%;
-    border: 2px solid var(--black);
-    border-top: 8px solid var(--black);
-    border-radius: 20px 80px;
-    transition: 0.3s;
+    border: none; /* Removendo o retângulo */
+    transition: 0.4s ease-in-out;
 }
 
 .produtos-lista h2 {
     font-size: 22px;
     font-weight: bold;
     color: var(--black);
+    margin-bottom: 15px;
+    transition: 0.3s;
 }
 
 .produtos-lista img {
     width: 100%;
-    max-width: 200px;
-    height: 150px;
+    height: 250px; /* Aumentando para ser proporcional ao espaço do antigo retângulo */
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.4s ease-in-out;
 }
 
 .produtos-lista:hover {
-    border: 2px solid var(--active);
-    border-top: 8px solid var(--active);
-    transform: scale(1.05);
+    transform: translateY(-10px); /* Efeito de levitação */
+}
+
+.produtos-lista:hover img {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
 }
 
 .produtos-lista:hover h2 {
-    font-size: 26px;
     color: var(--active);
+    font-size: 24px;
 }
 
 .produtos-descricao {
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 15px;
+    min-height: 3em;
 }
 
 .produtos-preco {
     font-size: 22px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 10px;
+    color: var(--active);
 }
 
 /* Layout Flex para Benefícios e Vídeo */
@@ -320,9 +330,8 @@ section p {
     }
 
     .produtos-lista {
-        width: 80%;
+        width: 90%;
         margin: 20px auto;
-        display: block;
     }
 
     .navbar {
