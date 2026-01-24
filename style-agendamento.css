@@ -4,18 +4,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px 0;
 }
 
 .agendamento-layout-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     width: 100%;
-    max-width: 100%; /* Ocupa toda a largura para a imagem iniciar na margem zero */
+    max-width: 1200px; /* Limitando a largura para um visual mais elegante e centralizado */
     background-color: var(--black);
     align-items: stretch; /* Garante que as colunas tenham a mesma altura */
 }
 
-/* Lado Esquerdo: Imagem iniciando na margem zero, sem cortes */
+/* Lado Esquerdo: Imagem com altura igual ao card */
 .agendamento-coluna-imagem {
     grid-column: 1;
     background-color: var(--black);
@@ -25,10 +26,9 @@
 
 .img-lateral {
     width: 100%;
-    height: 100%; /* Ocupa toda a altura do container definida pelo card */
-    object-fit: contain; /* Garante que a imagem não seja cortada */
-    background-color: var(--black); /* Fundo preto para preencher espaços se necessário */
-    object-position: left center; /* Alinha a imagem à esquerda (margem zero) */
+    height: 100%; /* Ocupa toda a altura do container, que é definida pelo card */
+    object-fit: cover; /* Preenche o espaço mantendo a proporção e a altura do card */
+    object-position: center;
 }
 
 /* Lado Direito: Conteúdo com card branco */
@@ -49,6 +49,7 @@
     border-radius: 25px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
     padding: 40px;
+    /* O card define a altura do container pai devido ao align-items: stretch */
 }
 
 .titulo-principal {
@@ -220,10 +221,6 @@
 
     .agendamento-coluna-imagem {
         height: 350px;
-    }
-
-    .img-lateral {
-        object-position: center;
     }
 
     .agendamento-coluna-conteudo-wrapper {
