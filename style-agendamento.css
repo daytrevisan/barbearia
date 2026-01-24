@@ -2,26 +2,22 @@
     background-color: var(--black);
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2em 0;
+    align-items: stretch; /* Garante que o container ocupe a altura toda se necessário */
+    justify-content: flex-start; /* Alinha ao início (esquerda) */
 }
 
 .agendamento-layout-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
-    grid-template-rows: auto auto; /* Duas linhas */
+    grid-template-columns: 1fr 0.8fr; /* Reduzindo a coluna da direita em 20% (de 1fr para 0.8fr) */
     width: 100%;
-    max-width: 1200px;
-    background-color: var(--white);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-    overflow: hidden;
+    max-width: 100%; /* Ocupa toda a largura da página para a imagem colar na margem */
+    background-color: var(--black); /* Fundo preto para harmonizar com a página */
 }
 
-/* Imagem ocupando 2 grids (linhas) à esquerda */
+/* Imagem colada à margem esquerda, sem bordas */
 .agendamento-coluna-imagem {
     grid-column: 1;
-    grid-row: 1 / span 2; /* Ocupa da linha 1 até a 2 */
+    grid-row: 1 / span 2;
     background-color: #1a1a1a;
     display: flex;
 }
@@ -33,26 +29,41 @@
     object-position: center;
 }
 
-/* Formulário ocupando 1 grid à direita (topo) */
-.agendamento-card {
+/* Coluna da Direita: Formulário e Calendário com bordas e largura reduzida */
+.agendamento-coluna-conteudo-wrapper {
     grid-column: 2;
-    grid-row: 1;
-    padding: 50px 50px 25px 50px;
-    background-color: var(--white);
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: var(--black);
 }
 
-/* Calendário ocupando 1 grid à direita (baixo) */
-.calendario-card {
-    grid-column: 2;
-    grid-row: 2;
-    padding: 25px 50px 50px 50px;
+.agendamento-card, .calendario-card {
+    width: 100%;
+    max-width: 500px; /* Limita a largura para manter o aspecto elegante */
     background-color: var(--white);
+    border-radius: 20px; /* Mantendo as bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.agendamento-card {
+    padding: 40px 40px 20px 40px;
+}
+
+.calendario-card {
+    padding: 20px 40px 40px 40px;
+    margin-bottom: 0;
 }
 
 .titulo-principal {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: left;
     display: block;
+    color: var(--black);
 }
 
 /* Estilos do Formulário */
@@ -65,6 +76,7 @@
     font-size: 14px;
     margin-bottom: 5px;
     font-weight: bold;
+    color: var(--black);
 }
 
 .input-padrao {
@@ -122,6 +134,7 @@
 .mes-ano {
     font-weight: bold;
     font-size: 1.1em;
+    color: var(--black);
 }
 
 .cal-btn {
@@ -138,6 +151,7 @@
     border-collapse: collapse;
     text-align: center;
     font-size: 13px;
+    color: var(--black);
 }
 
 .tabela-calendario th {
@@ -167,6 +181,7 @@
     margin-bottom: 15px;
     font-weight: bold;
     font-size: 1.1em;
+    color: var(--black);
 }
 
 .grid-horarios {
@@ -185,6 +200,7 @@
     transition: 0.3s;
     font-size: 13px;
     font-weight: bold;
+    color: var(--black);
 }
 
 .btn-horario:hover {
@@ -210,27 +226,16 @@
     background-color: var(--active);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
     .agendamento-layout-container {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
     }
 
     .agendamento-coluna-imagem {
-        grid-column: 1;
-        grid-row: 1;
         height: 300px;
     }
 
-    .agendamento-card {
-        grid-column: 1;
-        grid-row: 2;
-        padding: 30px 20px;
-    }
-
-    .calendario-card {
-        grid-column: 1;
-        grid-row: 3;
+    .agendamento-coluna-conteudo-wrapper {
         padding: 30px 20px;
     }
 }

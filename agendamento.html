@@ -31,85 +31,88 @@
 
     <main class="agendamento-principal">
         <div class="agendamento-layout-container">
-            <!-- Grid 1 & 2 (Lado Esquerdo): Imagem ampliada -->
+            <!-- Lado Esquerdo: Imagem colada na margem -->
             <section class="agendamento-coluna-imagem">
                 <img src="./img/contato-open.jpg" alt="Barbearia Aberta - OPEN" class="img-lateral">
             </section>
 
-            <!-- Grid 3 (Lado Direito Superior): Formulário -->
-            <section class="agendamento-card">
-                <h1 class="titulo-principal">Agende seu Horário</h1>
-                <form>
-                    <div class="input-group">
-                        <label for="nome">Nome e sobrenome</label>
-                        <input type="text" id="nome" class="input-padrao" placeholder="Seu nome completo" required>
-                    </div>
+            <!-- Lado Direito: Wrapper para Formulário e Calendário -->
+            <div class="agendamento-coluna-conteudo-wrapper">
+                <!-- Formulário -->
+                <section class="agendamento-card">
+                    <h1 class="titulo-principal">Agende seu Horário</h1>
+                    <form>
+                        <div class="input-group">
+                            <label for="nome">Nome e sobrenome</label>
+                            <input type="text" id="nome" class="input-padrao" placeholder="Seu nome completo" required>
+                        </div>
 
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="input-padrao" placeholder="seuemail@dominio.com" required>
-                    </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="input-padrao" placeholder="seuemail@dominio.com" required>
+                        </div>
 
-                    <div class="input-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" class="input-padrao" placeholder="(XX) XXXXX-XXXX" required>
-                    </div>
+                        <div class="input-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" class="input-padrao" placeholder="(XX) XXXXX-XXXX" required>
+                        </div>
 
-                    <button type="submit" id="botao-agendar">Confirmar Dados</button>
-                </form>
-            </section>
+                        <button type="submit" id="botao-agendar">Confirmar Dados</button>
+                    </form>
+                </section>
 
-            <!-- Grid 4 (Lado Direito Inferior): Calendário -->
-            <section class="calendario-card">
-                <h2 class="titulo-principal">Escolha a Data e Horário</h2>
-                <div class="calendario-visual">
-                    <div class="calendario-header">
-                        <button class="cal-btn">&lt;</button>
-                        <span class="mes-ano">Janeiro 2026</span>
-                        <button class="cal-btn">&gt;</button>
+                <!-- Calendário -->
+                <section class="calendario-card">
+                    <h2 class="titulo-principal">Escolha a Data e Horário</h2>
+                    <div class="calendario-visual">
+                        <div class="calendario-header">
+                            <button class="cal-btn">&lt;</button>
+                            <span class="mes-ano">Janeiro 2026</span>
+                            <button class="cal-btn">&gt;</button>
+                        </div>
+                        <table class="tabela-calendario">
+                            <thead>
+                                <tr>
+                                    <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="dia-vazio"></td><td class="dia-vazio"></td><td class="dia-vazio"></td><td class="dia-vazio"></td>
+                                    <td>1</td><td>2</td><td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td class="dia-selecionado">23</td><td>24</td>
+                                </tr>
+                                <tr>
+                                    <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="tabela-calendario">
-                        <thead>
-                            <tr>
-                                <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="dia-vazio"></td><td class="dia-vazio"></td><td class="dia-vazio"></td><td class="dia-vazio"></td>
-                                <td>1</td><td>2</td><td>3</td>
-                            </tr>
-                            <tr>
-                                <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
-                            </tr>
-                            <tr>
-                                <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
-                            </tr>
-                            <tr>
-                                <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td class="dia-selecionado">23</td><td>24</td>
-                            </tr>
-                            <tr>
-                                <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="horarios-disponiveis">
-                    <h3>Horários Disponíveis</h3>
-                    <div class="grid-horarios">
-                        <button class="btn-horario">09:00</button>
-                        <button class="btn-horario">10:00</button>
-                        <button class="btn-horario">11:00</button>
-                        <button class="btn-horario">13:00</button>
-                        <button class="btn-horario">14:00</button>
-                        <button class="btn-horario">15:00</button>
-                        <button class="btn-horario">16:00</button>
-                        <button class="btn-horario">17:00</button>
+                    
+                    <div class="horarios-disponiveis">
+                        <h3>Horários Disponíveis</h3>
+                        <div class="grid-horarios">
+                            <button class="btn-horario">09:00</button>
+                            <button class="btn-horario">10:00</button>
+                            <button class="btn-horario">11:00</button>
+                            <button class="btn-horario">13:00</button>
+                            <button class="btn-horario">14:00</button>
+                            <button class="btn-horario">15:00</button>
+                            <button class="btn-horario">16:00</button>
+                            <button class="btn-horario">17:00</button>
+                        </div>
+                        <button id="finalizar-agendamento">Finalizar Agendamento</button>
                     </div>
-                    <button id="finalizar-agendamento">Finalizar Agendamento</button>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </main>
 
