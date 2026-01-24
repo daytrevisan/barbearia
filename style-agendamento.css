@@ -1,5 +1,5 @@
 .agendamento-principal {
-    background-color: var(--black); /* Restaurado fundo preto para a seção toda */
+    background-color: var(--black); /* Fundo escuro padrão */
     min-height: 100vh;
     display: flex;
     align-items: stretch;
@@ -7,17 +7,16 @@
 
 .agendamento-layout-container {
     display: grid;
-    /* Ajustando colunas: imagem à esquerda e conteúdo à direita com largura reduzida */
     grid-template-columns: 1.3fr 0.7fr; 
     width: 100%;
     max-width: 100%;
     background-color: var(--black);
 }
 
-/* Lado Esquerdo: Imagem ampla colada à margem */
+/* Lado Esquerdo: Imagem ampla com fundo escuro */
 .agendamento-coluna-imagem {
     grid-column: 1;
-    background-color: #1a1a1a;
+    background-color: var(--black);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,32 +31,33 @@
     object-position: right center; 
 }
 
-/* Lado Direito: Wrapper com fundo preto e card branco reduzido */
+/* Lado Direito: Wrapper e Card com fundo escuro unificado */
 .agendamento-coluna-conteudo-wrapper {
     grid-column: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Alinhado à esquerda para aumentar a margem direita */
-    padding: 40px 60px 40px 40px; /* Aumentado padding à direita */
-    background-color: var(--black); /* Fundo preto na coluna */
+    align-items: flex-start;
+    padding: 40px 60px 40px 40px;
+    background-color: var(--black);
     overflow-y: auto;
 }
 
 .agendamento-card-unico {
-    width: 90%; /* Reduzido em 10% conforme solicitado */
+    width: 90%;
     max-width: 450px;
-    background-color: var(--white); /* Card com fundo branco */
+    background-color: #1a1a1a; /* Tom de cinza muito escuro para destacar levemente do fundo preto */
     border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
     padding: 40px;
+    border: 1px solid #333; /* Borda sutil para definir o card no fundo escuro */
 }
 
 .titulo-principal {
     margin-bottom: 30px;
     text-align: center;
     display: block;
-    color: var(--black);
+    color: var(--white); /* Texto branco para contraste */
     font-size: 1.8em;
     font-weight: bold;
 }
@@ -66,12 +66,12 @@
     margin: 30px 0 20px;
     font-size: 1.3em;
     font-weight: bold;
-    color: var(--black);
-    border-top: 1px solid #eee;
+    color: var(--white); /* Texto branco para contraste */
+    border-top: 1px solid #333;
     padding-top: 20px;
 }
 
-/* Estilos do Formulário */
+/* Estilos do Formulário no fundo escuro */
 .input-group {
     margin-bottom: 15px;
 }
@@ -81,32 +81,33 @@
     font-size: 14px;
     margin-bottom: 5px;
     font-weight: bold;
-    color: var(--black);
+    color: #ccc; /* Cinza claro para labels */
 }
 
 .input-padrao {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #ddd;
+    border: 2px solid #444;
     border-radius: 10px;
     font-size: 15px;
     box-sizing: border-box;
     transition: 0.3s;
-    background-color: #f9f9f9;
+    background-color: #222; /* Fundo do input escuro */
+    color: var(--white); /* Texto do input branco */
 }
 
 .input-padrao:focus {
     border-color: var(--active);
     outline: none;
-    background-color: var(--white);
+    background-color: #2a2a2a;
 }
 
-/* Estilos do Calendário */
+/* Estilos do Calendário no fundo escuro */
 .calendario-visual {
-    background: #f9f9f9;
+    background: #222;
     padding: 15px;
     border-radius: 15px;
-    border: 1px solid #eee;
+    border: 1px solid #333;
     margin-bottom: 20px;
 }
 
@@ -120,11 +121,11 @@
 .mes-ano {
     font-weight: bold;
     font-size: 1.1em;
-    color: var(--black);
+    color: var(--white);
 }
 
 .cal-btn {
-    background: var(--black);
+    background: #444;
     color: var(--white);
     border: none;
     padding: 5px 12px;
@@ -142,7 +143,7 @@
     border-collapse: collapse;
     text-align: center;
     font-size: 13px;
-    color: var(--black);
+    color: #ccc;
 }
 
 .tabela-calendario th {
@@ -159,7 +160,8 @@
 }
 
 .tabela-calendario td:hover:not(.dia-vazio) {
-    background-color: #eee;
+    background-color: #333;
+    color: var(--white);
 }
 
 .dia-selecionado {
@@ -172,7 +174,7 @@
     margin-bottom: 15px;
     font-weight: bold;
     font-size: 1.1em;
-    color: var(--black);
+    color: var(--white);
 }
 
 .grid-horarios {
@@ -184,19 +186,20 @@
 
 .btn-horario {
     padding: 10px;
-    border: 1px solid #ddd;
-    background: var(--white);
+    border: 1px solid #444;
+    background: #222;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
     font-size: 13px;
     font-weight: bold;
-    color: var(--black);
+    color: #ccc;
 }
 
 .btn-horario:hover {
     border-color: var(--active);
     color: var(--active);
+    background-color: #2a2a2a;
 }
 
 /* Botão Único de Finalização */
@@ -212,13 +215,12 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(91, 16, 35, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 #botao-finalizar:hover {
     background-color: var(--hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(91, 16, 35, 0.4);
 }
 
 @media screen and (max-width: 1024px) {
