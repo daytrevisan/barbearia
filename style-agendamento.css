@@ -1,52 +1,59 @@
 .agendamento-principal {
     background-color: var(--black);
-    padding: 4em 0;
     min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.agendamento-split-container {
+.agendamento-layout-container {
     display: flex;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 50px;
+    max-width: 1400px; /* Aumentado para acomodar melhor o layout lateral */
     background-color: var(--white);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     overflow: hidden;
-    align-items: stretch;
-    border-radius: 30px;
+    min-height: 100vh;
 }
 
-.agendamento-lado-imagem {
+/* Coluna da Imagem - Lado Esquerdo */
+.agendamento-coluna-imagem {
     flex: 1;
     background-color: #1a1a1a;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    align-items: stretch;
 }
 
-.img-full-open {
+.img-lateral {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
-.agendamento-lado-conteudo {
-    flex: 1;
-    padding: 50px;
+/* Coluna do Conteúdo - Lado Direito */
+.agendamento-coluna-conteudo {
+    flex: 1.2;
+    padding: 60px;
     background-color: var(--white);
     color: var(--black);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 40px;
+    overflow-y: auto;
 }
 
-.agendamento-card .titulo-principal {
+.agendamento-card, .calendario-card {
+    width: 100%;
+}
+
+.titulo-principal {
     margin-bottom: 25px;
     text-align: left;
     display: block;
 }
 
+/* Estilos do Formulário */
 .input-group {
     margin-bottom: 20px;
 }
@@ -87,42 +94,19 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
-    margin-top: 10px;
 }
 
 #botao-agendar:hover {
     background-color: var(--hover);
 }
 
-/* Seção do Calendário */
-.secao-calendario {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 50px;
-    border-radius: 30px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-}
-
-.calendario-container .titulo-principal {
-    margin-bottom: 40px;
-    text-align: center;
-    display: block;
-}
-
-.calendario-flex {
-    display: flex;
-    gap: 50px;
-    justify-content: space-between;
-}
-
+/* Estilos do Calendário */
 .calendario-visual {
-    flex: 1.2;
     background: #f9f9f9;
     padding: 20px;
     border-radius: 20px;
     border: 1px solid #eee;
+    margin-bottom: 30px;
 }
 
 .calendario-header {
@@ -159,7 +143,7 @@
 }
 
 .tabela-calendario td {
-    padding: 15px;
+    padding: 12px;
     cursor: pointer;
     border-radius: 10px;
     transition: 0.3s;
@@ -173,10 +157,6 @@
     background-color: var(--active) !important;
     color: var(--white);
     font-weight: bold;
-}
-
-.horarios-disponiveis {
-    flex: 1;
 }
 
 .horarios-disponiveis h3 {
@@ -225,16 +205,16 @@
     background-color: var(--active);
 }
 
-@media screen and (max-width: 768px) {
-    .agendamento-split-container, .calendario-flex {
+@media screen and (max-width: 1024px) {
+    .agendamento-layout-container {
         flex-direction: column;
     }
 
-    .agendamento-lado-imagem {
-        height: 250px;
+    .agendamento-coluna-imagem {
+        height: 400px;
     }
 
-    .secao-calendario {
-        padding: 20px;
+    .agendamento-coluna-conteudo {
+        padding: 40px 20px;
     }
 }

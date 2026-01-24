@@ -30,12 +30,14 @@
     </header>
 
     <main class="agendamento-principal">
-        <div class="agendamento-split-container">
-            <section class="agendamento-lado-imagem">
-                <img src="./img/contato-open.jpg" alt="Barbearia Aberta - OPEN" class="img-full-open">
+        <div class="agendamento-layout-container">
+            <!-- Lado Esquerdo: Imagem colada na margem -->
+            <section class="agendamento-coluna-imagem">
+                <img src="./img/contato-open.jpg" alt="Barbearia Aberta - OPEN" class="img-lateral">
             </section>
 
-            <section class="agendamento-lado-conteudo">
+            <!-- Lado Direito: Formulário e Calendário -->
+            <section class="agendamento-coluna-conteudo">
                 <div class="agendamento-card">
                     <h1 class="titulo-principal">Agende seu Horário</h1>
                     <form>
@@ -57,13 +59,9 @@
                         <button type="submit" id="botao-agendar">Confirmar Dados</button>
                     </form>
                 </div>
-            </section>
-        </div>
 
-        <section class="secao-calendario">
-            <div class="calendario-container">
-                <h2 class="titulo-principal">Escolha a Data e Horário</h2>
-                <div class="calendario-flex">
+                <div class="calendario-card">
+                    <h2 class="titulo-principal">Escolha a Data e Horário</h2>
                     <div class="calendario-visual">
                         <div class="calendario-header">
                             <button class="cal-btn">&lt;</button>
@@ -112,8 +110,8 @@
                         <button id="finalizar-agendamento">Finalizar Agendamento</button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer class="rodape">
