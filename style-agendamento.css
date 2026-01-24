@@ -7,8 +7,6 @@
 
 .agendamento-layout-container {
     display: grid;
-    /* Alterando a proporção: diminuindo a coluna da imagem para 1fr e mantendo o conteúdo */
-    /* Isso fará com que o conteúdo se desloque mais para a esquerda (centro) */
     grid-template-columns: 0.8fr 1.2fr; 
     width: 100%;
     max-width: 100%;
@@ -30,20 +28,17 @@
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    /* Ajustado para cortar o lado esquerdo até a barra vermelha, focando na placa OPEN */
-    /* 100% alinha a imagem totalmente à direita, cortando o excesso da esquerda */
     object-position: 100% center; 
 }
 
-/* Lado Direito: Conteúdo mais centralizado e com margem direita maior */
+/* Lado Direito: Conteúdo com fundo escuro e card branco */
 .agendamento-coluna-conteudo-wrapper {
     grid-column: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Alinhado ao início para que o card fique mais próximo da imagem (centro da página) */
     align-items: flex-start; 
-    padding: 40px 15% 40px 60px; /* Aumentado significativamente o padding à direita (15%) */
+    padding: 40px 15% 40px 60px; 
     background-color: var(--black);
     overflow-y: auto;
 }
@@ -51,18 +46,17 @@
 .agendamento-card-unico {
     width: 100%;
     max-width: 450px;
-    background-color: #1a1a1a;
+    background-color: var(--white); /* Restaurado para cor clara */
     border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
     padding: 40px;
-    border: 1px solid #333;
 }
 
 .titulo-principal {
     margin-bottom: 30px;
     text-align: center;
     display: block;
-    color: var(--white);
+    color: var(--black); /* Texto preto para fundo branco */
     font-size: 1.8em;
     font-weight: bold;
 }
@@ -71,12 +65,12 @@
     margin: 30px 0 20px;
     font-size: 1.3em;
     font-weight: bold;
-    color: var(--white);
-    border-top: 1px solid #333;
+    color: var(--black); /* Texto preto para fundo branco */
+    border-top: 1px solid #eee;
     padding-top: 20px;
 }
 
-/* Estilos do Formulário */
+/* Estilos do Formulário no fundo branco */
 .input-group {
     margin-bottom: 15px;
 }
@@ -86,33 +80,33 @@
     font-size: 14px;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #ccc;
+    color: var(--black);
 }
 
 .input-padrao {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #444;
+    border: 2px solid #ddd;
     border-radius: 10px;
     font-size: 15px;
     box-sizing: border-box;
     transition: 0.3s;
-    background-color: #222;
-    color: var(--white);
+    background-color: #f9f9f9;
+    color: var(--black);
 }
 
 .input-padrao:focus {
     border-color: var(--active);
     outline: none;
-    background-color: #2a2a2a;
+    background-color: var(--white);
 }
 
-/* Estilos do Calendário */
+/* Estilos do Calendário no fundo branco */
 .calendario-visual {
-    background: #222;
+    background: #f9f9f9;
     padding: 15px;
     border-radius: 15px;
-    border: 1px solid #333;
+    border: 1px solid #eee;
     margin-bottom: 20px;
 }
 
@@ -126,11 +120,11 @@
 .mes-ano {
     font-weight: bold;
     font-size: 1.1em;
-    color: var(--white);
+    color: var(--black);
 }
 
 .cal-btn {
-    background: #444;
+    background: var(--black);
     color: var(--white);
     border: none;
     padding: 5px 12px;
@@ -148,7 +142,7 @@
     border-collapse: collapse;
     text-align: center;
     font-size: 13px;
-    color: #ccc;
+    color: var(--black);
 }
 
 .tabela-calendario th {
@@ -165,8 +159,7 @@
 }
 
 .tabela-calendario td:hover:not(.dia-vazio) {
-    background-color: #333;
-    color: var(--white);
+    background-color: #eee;
 }
 
 .dia-selecionado {
@@ -179,7 +172,7 @@
     margin-bottom: 15px;
     font-weight: bold;
     font-size: 1.1em;
-    color: var(--white);
+    color: var(--black);
 }
 
 .grid-horarios {
@@ -191,20 +184,19 @@
 
 .btn-horario {
     padding: 10px;
-    border: 1px solid #444;
-    background: #222;
+    border: 1px solid #ddd;
+    background: var(--white);
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
     font-size: 13px;
     font-weight: bold;
-    color: #ccc;
+    color: var(--black);
 }
 
 .btn-horario:hover {
     border-color: var(--active);
     color: var(--active);
-    background-color: #2a2a2a;
 }
 
 /* Botão Único de Finalização */
@@ -220,7 +212,7 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(91, 16, 35, 0.3);
 }
 
 #botao-finalizar:hover {
