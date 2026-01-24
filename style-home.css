@@ -65,13 +65,13 @@ header {
 
 /* Estilização das Seções Intercaladas */
 .sobre-barber-shop {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .conteudo-beneficios {
-    background-color: var(--dark-gray);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .nosso-estabelecimento {
@@ -103,9 +103,13 @@ header {
 }
 
 /* Ajuste de sombra para títulos em fundos escuros */
-.conteudo-beneficios .titulo-principal,
+.sobre-barber-shop .titulo-principal,
 .nosso-estabelecimento .titulo-principal {
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.conteudo-beneficios .titulo-principal {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .img-utensilios {
