@@ -257,8 +257,8 @@ section p {
 }
 
 .video-container {
-    width: 100%; /* Vídeo ocupa a largura total embaixo */
-    margin-top: 20px;
+    width: 50%; /* Reduzido para 50% */
+    margin: 20px auto 0; /* Centralizado */
 }
 
 .lista-beneficios {
@@ -290,19 +290,61 @@ section p {
 }
 
 .rodape {
-    background: url("./img/bg.jpg");
-    padding: 20px 0;
-    text-align: center;
+    background-color: var(--black);
+    padding: 15px 0;
+    color: var(--white);
+    border-top: 1px solid #333;
 }
 
-.rodape img {
-    width: 200px;
+.rodape-container {
+    width: 940px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#copyright {
-    color: #f6f6f6;
-    font-size: 12px;
-    margin: 10px 0 0;
+.rodape-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-rodape {
+    width: 40px; /* Logo bem pequena */
+}
+
+.copyright-texto {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.rodape-direita {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 20px;
+}
+
+.redes-sociais a, .link-topo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.redes-sociais a:hover, .link-topo:hover {
+    color: var(--hover);
+}
+
+.link-topo {
+    font-size: 20px;
 }
 
 @media screen and (max-width: 480px) {
