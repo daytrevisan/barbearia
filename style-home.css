@@ -14,6 +14,10 @@ html {
 
 body {
     background-color: var(--black);
+    overflow-x: hidden; /* Previne qualquer transbordamento acidental */
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -24,7 +28,8 @@ header {
 .navbar {
     display: flex;
     justify-content: space-between;
-    width: 80vw;
+    width: 90%; /* Mudado de vw para % para evitar problemas com scrollbar */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -62,7 +67,7 @@ header {
 }
 
 .img-banner {
-    width: 100vw;
+    width: 100%; /* Mudado de 100vw para 100% */
     margin: 0 auto;
     display: block;
 }
@@ -95,7 +100,8 @@ header {
 }
 
 .main-sections-container {
-    width: 940px;
+    width: 90%;
+    max-width: 940px;
     margin: 0 auto;
 }
 
@@ -297,7 +303,7 @@ section p {
 }
 
 .rodape-container {
-    width: 80vw; /* Aumentado para dar mais espaço lateral */
+    width: 90%; /* Mudado de 80vw para 90% */
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
