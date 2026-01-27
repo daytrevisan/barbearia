@@ -12,6 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Agendamento - Barber Shop</title>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const unidade = urlParams.get('unidade');
+            if (unidade) {
+                const titulo = document.querySelector('.titulo-principal');
+                titulo.textContent = 'Agende seu Horário na Unidade ' + unidade;
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -23,7 +33,7 @@
                     <li class="lista"><a href="./index.html#sobre" class="lista-link">Sobre</a></li>
                     <li class="lista"><a href="./index.html#servicos" class="lista-link">Serviços</a></li>
                     <li class="lista"><a href="./index.html#beneficios" class="lista-link">Benefícios</a></li>
-                    <li class="lista"><a href="./index.html#localizacao" class="lista-link">Localização</a></li>
+                    <li class="lista"><a href="./index.html#unidades" class="lista-link">Nossas Unidades</a></li>
                     <li class="lista"><a href="./agendamento.html" class="lista-link btn-agendamento">Agendamento Online</a></li>
                 </ul>
             </nav>
