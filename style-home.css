@@ -66,6 +66,23 @@ header {
     color: var(--active);
 }
 
+/* Estilo para o botão de agendamento na navbar */
+.btn-agendamento {
+    background-color: #f1c40f; /* Amarelo ouro conforme imagem */
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-agendamento:hover {
+    background-color: #d4ac0d; /* Tom mais escuro no hover */
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+    transform: translateY(-2px);
+}
+
 .img-banner {
     width: 100%; /* Mudado de 100vw para 100% */
     margin: 0 auto;
@@ -263,7 +280,7 @@ section p {
 }
 
 .video-container {
-    width: 50%; /* Reduzido para 50% */
+    width: 75%; /* Ajustado para 75% conforme solicitado */
     margin: 20px auto 0; /* Centralizado */
 }
 
