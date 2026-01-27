@@ -90,6 +90,7 @@ header {
 
 .main-sections {
     padding: 3em 0;
+    scroll-margin-top: 100px; /* Compensa a altura da navbar fixa */
 }
 
 .main-sections-container {
