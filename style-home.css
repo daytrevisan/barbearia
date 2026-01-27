@@ -71,6 +71,7 @@ header {
 .sobre-barber-shop {
     background-color: var(--black);
     color: var(--white);
+    text-align: justify;
 }
 
 .servicos {
@@ -240,16 +241,24 @@ section p {
 .beneficios-flex-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center; /* Alinha verticalmente a lista e a imagem */
+    gap: 40px;
+    margin-bottom: 40px; /* Espaço antes do vídeo */
 }
 
 .beneficios-conteudo {
-    width: 50%;
+    width: 45%;
+}
+
+.img-beneficios {
+    width: 50%; /* Imagem ao lado da lista */
+    margin: 0;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .video-container {
-    width: 45%;
+    width: 100%; /* Vídeo ocupa a largura total embaixo */
+    margin-top: 20px;
 }
 
 .lista-beneficios {
@@ -272,11 +281,8 @@ section p {
 }
 
 .img-beneficios {
-    width: 100%;
-    margin: 20px 0 0;
     opacity: 1;
     transition: 400ms;
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .img-beneficios:hover {
