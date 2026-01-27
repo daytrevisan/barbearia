@@ -291,13 +291,14 @@ section p {
 
 .rodape {
     background-color: var(--black);
-    padding: 15px 0;
+    padding: 20px 0;
     color: var(--white);
-    border-top: 1px solid #333;
+    border-top: 1px solid #222;
 }
 
 .rodape-container {
-    width: 940px;
+    width: 80vw; /* Aumentado para dar mais espaço lateral */
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -307,44 +308,50 @@ section p {
 .rodape-esquerda {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .logo-rodape {
-    width: 40px; /* Logo bem pequena */
+    width: 30px; /* Logo ainda mais discreta */
+    filter: brightness(0) invert(1); /* Garante que a logo fique branca se for escura */
 }
 
 .copyright-texto {
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     margin: 0;
+    color: var(--white);
+    opacity: 0.8;
 }
 
 .rodape-direita {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
 }
 
 .redes-sociais {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .redes-sociais a, .link-topo {
-    color: var(--white);
+    color: var(--white) !important; /* Força a cor branca */
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: 0.3s;
+    opacity: 0.8;
 }
 
 .redes-sociais a:hover, .link-topo:hover {
-    color: var(--hover);
+    opacity: 1;
+    color: var(--hover) !important;
 }
 
 .link-topo {
-    font-size: 20px;
+    font-size: 18px;
+    margin-left: 10px;
 }
 
 @media screen and (max-width: 480px) {
