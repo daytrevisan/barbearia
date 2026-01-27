@@ -144,18 +144,14 @@ header {
 .servico-item {
     width: 30%;
     text-align: center;
-    padding: 30px 20px;
+    padding: 20px;
     box-sizing: border-box;
-    border: 2px solid var(--black);
-    border-top: 8px solid var(--black);
-    border-radius: 20px 80px;
+    border: none; /* Removendo bordas e desenhos */
     transition: 400ms;
 }
 
 .servico-item:hover {
-    border-color: var(--active);
-    border-top-color: var(--active);
-    transform: scale(1.05);
+    transform: translateY(-10px); /* Efeito de levitação no hover */
 }
 
 .servico-item h2 {
@@ -166,8 +162,17 @@ header {
 
 .servico-item img {
     width: 100%;
-    max-width: 150px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
     margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 400ms;
+}
+
+.servico-item:hover img {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
 }
 
 .servico-descricao {
