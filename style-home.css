@@ -4,8 +4,9 @@
     --dark-gray: #252525;
     --black: #121212;
     --white: #FEFEFE;
-    --hover: #bd7a22;
+    --hover: #E3A018; /* Tom Mostarda */
     --active: #5b1023;
+    --mostarda: #E3A018;
 }
 
 html {
@@ -13,6 +14,7 @@ html {
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     background-color: var(--black);
     overflow-x: hidden; /* Previne qualquer transbordamento acidental */
     width: 100%;
@@ -59,8 +61,8 @@ header {
 }
 
 .lista-link:hover {
-    color: #FFD700; /* Amarelo ouro mais vivo */
-    text-decoration: none; /* Removido sublinhado */
+    color: var(--mostarda); /* Tom Mostarda */
+    text-decoration: none;
 }
 
 .lista-link:active {
@@ -69,8 +71,8 @@ header {
 
 /* Estilo para o botão de agendamento na navbar */
 .btn-agendamento {
-    background-color: #FFD700; /* Amarelo ouro mais vivo */
-    color: #000000 !important; /* Texto preto para melhor contraste no botão vivo */
+    background-color: var(--mostarda); /* Tom Mostarda */
+    color: #000000 !important;
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
@@ -79,10 +81,10 @@ header {
 }
 
 .btn-agendamento:hover {
-    background-color: #DAA520; /* Dourado mais profundo no hover */
+    background-color: #C68B10; /* Mostarda mais escuro */
     color: #000000 !important;
     text-decoration: none !important;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
     transform: translateY(-2px);
 }
 
@@ -110,8 +112,8 @@ header {
 }
 
 .nosso-estabelecimento {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .main-sections {
@@ -267,16 +269,31 @@ section p {
     overflow: hidden;
     text-align: left;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.unidade-card:hover {
+    transform: translateY(-10px); /* Efeito de subida no card */
 }
 
 .unidade-img {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.unidade-card:hover .unidade-img {
+    transform: scale(1.05); /* Leve zoom na imagem ao subir */
 }
 
 .unidade-info {
     padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.unidade-card:hover .unidade-info {
+    background-color: #4a3f3a; /* Mudança de cor no card de informações */
 }
 
 .unidade-tag {
@@ -299,7 +316,7 @@ section p {
 .unidade-nome {
     font-size: 24px;
     font-weight: 900;
-    color: #FFD700; /* Amarelo ouro */
+    color: var(--mostarda); /* Tom Mostarda */
     margin-bottom: 15px;
     line-height: 1.1;
 }
