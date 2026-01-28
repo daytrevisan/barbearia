@@ -302,22 +302,7 @@ section p {
     background-color: #252525; /* Tom de cinza escuro para o hover no card preto */
 }
 
-.unidade-tag {
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.unidade-tag::before {
-    content: "";
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background-color: #ffffff;
-    margin-right: 0; /* Removido espaço já que não há texto */
-}
+/* Marcador removido */
 
 .unidade-nome {
     font-size: 24px;
@@ -417,7 +402,7 @@ section p {
 
 .rodape {
     background-color: var(--black);
-    padding: 20px 0;
+    padding: 30px 0; /* Aumentado de 20px para 30px (50% de aumento) */
     color: var(--white);
     border-top: 1px solid #222;
 }
