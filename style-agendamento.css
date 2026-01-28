@@ -216,8 +216,9 @@
 }
 
 #botao-finalizar:hover {
-    background-color: var(--hover);
+    background-color: #C68B10; /* Mostarda mais escuro, padronizado com a navbar */
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
 }
 
 @media screen and (max-width: 1024px) {

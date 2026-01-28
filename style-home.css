@@ -207,8 +207,8 @@ header {
 }
 
 .servico-item:hover img {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra mais intensa no hover */
+    transform: scale(1.03);
 }
 
 .servico-descricao {
@@ -222,10 +222,22 @@ header {
     margin-top: 20px;
 }
 
-.img-utensilios {
-    width: 20%;
-    float: left;
-    margin: 0 20px 5px 0;
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.img-sobre {
+    width: 40%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-texto {
+    flex: 1;
+    line-height: 1.6;
 }
 
 .icone-e-titulo {
@@ -286,11 +298,12 @@ section p {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .unidade-card:hover .unidade-img {
     transform: scale(1.05); /* Leve zoom na imagem ao subir */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Sombra no hover da imagem da unidade */
 }
 
 .unidade-info {
