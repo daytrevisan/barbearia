@@ -4,8 +4,9 @@
     --dark-gray: #252525;
     --black: #121212;
     --white: #FEFEFE;
-    --hover: #bd7a22;
+    --hover: #E3A018; /* Tom Mostarda */
     --active: #5b1023;
+    --mostarda: #E3A018;
 }
 
 html {
@@ -13,6 +14,7 @@ html {
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     background-color: var(--black);
     overflow-x: hidden; /* Previne qualquer transbordamento acidental */
     width: 100%;
@@ -28,9 +30,11 @@ header {
 .navbar {
     display: flex;
     justify-content: space-between;
-    width: 90%; /* Mudado de vw para % para evitar problemas com scrollbar */
-    max-width: 1200px;
+    align-items: center; /* Garante alinhamento vertical */
+    width: 95%; /* Aumentado para dar mais respiro lateral */
+    max-width: 1400px; /* Aumentado para permitir maior distanciamento */
     margin: 0 auto;
+    padding: 10px 0;
 }
 
 .navbar img, .logo {
@@ -53,17 +57,37 @@ header {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px; /* Aumentado de 18px para 20px */
     color: var(--white);
+    transition: color 0.3s ease;
 }
 
 .lista-link:hover {
-    color: var(--hover);
-    text-decoration: underline;
+    color: var(--mostarda); /* Tom Mostarda */
+    text-decoration: none;
 }
 
 .lista-link:active {
     color: var(--active);
+}
+
+/* Estilo para o botão de agendamento na navbar */
+.btn-agendamento {
+    background-color: var(--mostarda); /* Tom Mostarda */
+    color: #000000 !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-agendamento:hover {
+    background-color: #C68B10; /* Mostarda mais escuro */
+    color: #000000 !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
+    transform: translateY(-2px);
 }
 
 .img-banner {
@@ -92,7 +116,7 @@ header {
 }
 
 .nosso-estabelecimento {
-    background-color: var(--white);
+    background-color: var(--white); /* Fundo claro conforme solicitado */
     color: var(--black);
 }
 
@@ -134,10 +158,14 @@ header {
 }
 
 /* Título bordô para seções brancas */
-.servicos .titulo-principal,
-.nosso-estabelecimento .titulo-principal {
+.servicos .titulo-principal {
     color: var(--active);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nosso-estabelecimento .titulo-principal {
+    color: var(--active); /* Vermelho bordô utilizado na página */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilização da Lista de Serviços */
@@ -181,8 +209,8 @@ header {
 }
 
 .servico-item:hover img {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra mais intensa no hover */
+    transform: scale(1.03);
 }
 
 .servico-descricao {
@@ -196,10 +224,22 @@ header {
     margin-top: 20px;
 }
 
-.img-utensilios {
-    width: 20%;
-    float: left;
-    margin: 0 20px 5px 0;
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.img-sobre {
+    width: 40%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-texto {
+    flex: 1;
+    line-height: 1.6;
 }
 
 .icone-e-titulo {
@@ -233,10 +273,88 @@ section p {
     line-height: 1.5rem;
 }
 
-.mapa-conteudo {
+.unidades-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.unidade-card {
+    background-color: var(--black); /* Cor escura padrão da navbar */
+    color: #ffffff;
+    width: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.unidade-card:hover {
+    transform: translateY(-10px); /* Efeito de subida no card */
+}
+
+.unidade-img {
     width: 100%;
-    margin: 0 auto;
-    text-align: center;
+    height: 180px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.unidade-card:hover .unidade-img {
+    transform: scale(1.05); /* Leve zoom na imagem ao subir */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Sombra no hover da imagem da unidade */
+}
+
+.unidade-info {
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.unidade-card:hover .unidade-info {
+    background-color: #252525; /* Tom de cinza escuro para o hover no card preto */
+}
+
+/* Marcador removido */
+
+.unidade-nome {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--mostarda); /* Tom Mostarda */
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.unidade-endereco {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.unidade-contato p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.unidade-agendar {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.unidade-agendar:hover {
+    text-decoration: underline;
+    opacity: 0.8;
 }
 
 .icone-titulo {
@@ -265,7 +383,7 @@ section p {
 }
 
 .video-container {
-    width: 50%; /* Reduzido para 50% */
+    width: 75%; /* Ajustado para 75% conforme solicitado */
     margin: 20px auto 0; /* Centralizado */
 }
 
@@ -299,7 +417,7 @@ section p {
 
 .rodape {
     background-color: var(--black);
-    padding: 20px 0;
+    padding: 45px 0; /* Aumentado em 50% (de 30px para 45px) */
     color: var(--white);
     border-top: 1px solid #222;
 }
@@ -320,7 +438,7 @@ section p {
 }
 
 .logo-rodape {
-    width: 30px; /* Logo ainda mais discreta */
+    width: 45px; /* Logo aumentada em 50% (de 30px para 45px) */
     filter: brightness(0) invert(1); /* Garante que a logo fique branca se for escura */
 }
 
