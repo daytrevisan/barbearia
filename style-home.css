@@ -30,9 +30,11 @@ header {
 .navbar {
     display: flex;
     justify-content: space-between;
-    width: 90%; /* Mudado de vw para % para evitar problemas com scrollbar */
-    max-width: 1200px;
+    align-items: center; /* Garante alinhamento vertical */
+    width: 95%; /* Aumentado para dar mais respiro lateral */
+    max-width: 1400px; /* Aumentado para permitir maior distanciamento */
     margin: 0 auto;
+    padding: 10px 0;
 }
 
 .navbar img, .logo {
@@ -303,18 +305,18 @@ section p {
 .unidade-tag {
     font-size: 12px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 5px;
 }
 
 .unidade-tag::before {
     content: "";
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background-color: #ffffff;
+    margin-right: 0; /* Removido espaço já que não há texto */
 }
 
 .unidade-nome {
