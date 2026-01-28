@@ -22,7 +22,7 @@ body {
 
 header {
     background: url("./img/bg.jpg");
-    padding: 20px;
+    padding: 10px; /* Reduzido de 20px para 10px (total de 20px a menos na altura) */
 }
 
 .navbar {
@@ -67,7 +67,9 @@ header {
 }
 
 .img-banner {
-    width: 100%; /* Mudado de 100vw para 100% */
+    width: 100%;
+    height: 500px; /* Altura fixa para permitir o esticamento */
+    object-fit: fill; /* Estica a imagem para preencher o container */
     margin: 0 auto;
     display: block;
 }

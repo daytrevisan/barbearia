@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Poppins", sans-serif; /* Garante Poppins em toda a seção principal */
 }
 
 .agendamento-layout-container {
@@ -92,6 +93,7 @@
     transition: 0.3s;
     background-color: #f9f9f9;
     color: var(--black);
+    font-family: "Poppins", sans-serif;
 }
 
 .input-padrao:focus {
@@ -206,6 +208,7 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
+    font-family: "Poppins", sans-serif;
 }
 
 #botao-finalizar:hover {
