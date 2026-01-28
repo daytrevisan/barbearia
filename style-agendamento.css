@@ -195,8 +195,9 @@
 }
 
 .btn-horario:hover {
-    border-color: var(--active);
-    color: var(--active);
+    background-color: var(--mostarda);
+    border-color: var(--mostarda);
+    color: var(--black);
 }
 
 /* Botão Único de Finalização */

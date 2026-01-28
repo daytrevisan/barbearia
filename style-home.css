@@ -402,7 +402,7 @@ section p {
 
 .rodape {
     background-color: var(--black);
-    padding: 30px 0; /* Aumentado de 20px para 30px (50% de aumento) */
+    padding: 45px 0; /* Aumentado em 50% (de 30px para 45px) */
     color: var(--white);
     border-top: 1px solid #222;
 }
@@ -423,7 +423,7 @@ section p {
 }
 
 .logo-rodape {
-    width: 30px; /* Logo ainda mais discreta */
+    width: 45px; /* Logo aumentada em 50% (de 30px para 45px) */
     filter: brightness(0) invert(1); /* Garante que a logo fique branca se for escura */
 }
 
