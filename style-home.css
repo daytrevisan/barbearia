@@ -112,8 +112,8 @@ header {
 }
 
 .nosso-estabelecimento {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--white); /* Fundo claro conforme solicitado */
+    color: var(--black);
 }
 
 .main-sections {
@@ -154,10 +154,14 @@ header {
 }
 
 /* Título bordô para seções brancas */
-.servicos .titulo-principal,
-.nosso-estabelecimento .titulo-principal {
+.servicos .titulo-principal {
     color: var(--active);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nosso-estabelecimento .titulo-principal {
+    color: var(--mostarda); /* Tom Mostarda conforme solicitado */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilização da Lista de Serviços */
@@ -262,7 +266,7 @@ section p {
 }
 
 .unidade-card {
-    background-color: #3d3430; /* Fundo marrom escuro conforme imagem */
+    background-color: var(--black); /* Cor escura padrão da navbar */
     color: #ffffff;
     width: 300px;
     border-radius: 4px;
@@ -293,7 +297,7 @@ section p {
 }
 
 .unidade-card:hover .unidade-info {
-    background-color: #4a3f3a; /* Mudança de cor no card de informações */
+    background-color: #252525; /* Tom de cinza escuro para o hover no card preto */
 }
 
 .unidade-tag {
