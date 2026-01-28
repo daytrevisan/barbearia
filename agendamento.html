@@ -19,6 +19,11 @@
             if (unidade) {
                 const titulo = document.querySelector('.titulo-principal');
                 titulo.textContent = 'Agende seu Horário na Unidade ' + unidade;
+                
+                const select = document.getElementById('unidade-select');
+                if (select) {
+                    select.value = unidade;
+                }
             }
         }
     </script>
@@ -55,6 +60,16 @@
                     <form id="form-agendamento">
                         <!-- Dados Pessoais -->
                         <div class="sessao-form">
+                            <div class="input-group">
+                                <label for="unidade-select">Unidade</label>
+                                <select id="unidade-select" class="input-padrao" required>
+                                    <option value="" disabled selected>Selecione a unidade</option>
+                                    <option value="Paulista">Barber Shop Paulista</option>
+                                    <option value="Pinheiros">Barber Shop Pinheiros</option>
+                                    <option value="Moema">Barber Shop Moema</option>
+                                </select>
+                            </div>
+
                             <div class="input-group">
                                 <label for="nome">Nome e sobrenome</label>
                                 <input type="text" id="nome" class="input-padrao" placeholder="Seu nome completo" required>

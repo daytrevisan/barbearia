@@ -162,7 +162,7 @@ header {
 }
 
 .nosso-estabelecimento .titulo-principal {
-    color: var(--mostarda); /* Tom Mostarda conforme solicitado */
+    color: var(--active); /* Vermelho bordô utilizado na página */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
