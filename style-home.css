@@ -4,9 +4,9 @@
     --dark-gray: #252525;
     --black: #121212;
     --white: #FEFEFE;
-    --hover: #E3A018; /* Tom Mostarda */
     --active: #5b1023;
-    --mostarda: #E3A018;
+    --mustard: #E3A018;
+    --dark-mustard: #E3A018;
 }
 
 html {
@@ -16,7 +16,7 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--black);
-    overflow-x: hidden; /* Previne qualquer transbordamento acidental */
+    overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -24,15 +24,15 @@ body {
 
 header {
     background: url("./img/bg.jpg");
-    padding: 10px; /* Reduzido de 20px para 10px (total de 20px a menos na altura) */
+    padding: 10px;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Garante alinhamento vertical */
-    width: 95%; /* Aumentado para dar mais respiro lateral */
-    max-width: 1400px; /* Aumentado para permitir maior distanciamento */
+    align-items: center;
+    width: 95%;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 10px 0;
 }
@@ -57,13 +57,13 @@ header {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px; /* Aumentado de 18px para 20px */
+    font-size: 20px;
     color: var(--white);
     transition: color 0.3s ease;
 }
 
 .lista-link:hover {
-    color: var(--mostarda); /* Tom Mostarda */
+    color: var(--mostarda);
     text-decoration: none;
 }
 
@@ -73,8 +73,8 @@ header {
 
 /* Estilo para o botão de agendamento na navbar */
 .btn-agendamento {
-    background-color: var(--mostarda); /* Tom Mostarda */
-    color: #000000 !important;
+    background-color: var(--mostarda);
+    color: var(--black) !important;
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
@@ -83,8 +83,8 @@ header {
 }
 
 .btn-agendamento:hover {
-    background-color: #C68B10; /* Mostarda mais escuro */
-    color: #000000 !important;
+    background-color: var(--dark-mustard);
+    color: var(--black) !important;
     text-decoration: none !important;
     box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
     transform: translateY(-2px);
@@ -92,8 +92,8 @@ header {
 
 .img-banner {
     width: 100%;
-    height: 500px; /* Altura fixa para permitir o esticamento */
-    object-fit: fill; /* Estica a imagem para preencher o container */
+    height: 500px;
+    object-fit: fill;
     margin: 0 auto;
     display: block;
 }
@@ -116,13 +116,13 @@ header {
 }
 
 .nosso-estabelecimento {
-    background-color: var(--white); /* Fundo claro conforme solicitado */
+    background-color: var(--white);
     color: var(--black);
 }
 
 .main-sections {
     padding: 3em 0;
-    scroll-margin-top: 100px; /* Compensa a altura da navbar fixa */
+    scroll-margin-top: 100px;
 }
 
 .main-sections-container {
@@ -144,27 +144,24 @@ header {
     color: var(--active);
 }
 
-/* Título branco para seções pretas */
 .sobre-barber-shop .titulo-principal,
 .conteudo-beneficios .titulo-principal {
     color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Título branco para a seção Sobre (conforme pedido anterior) */
 .sobre-barber-shop .titulo-principal {
     color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Título bordô para seções brancas */
 .servicos .titulo-principal {
     color: var(--active);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .nosso-estabelecimento .titulo-principal {
-    color: var(--active); /* Vermelho bordô utilizado na página */
+    color: var(--active);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -174,22 +171,22 @@ header {
     margin: 0 auto;
     padding: 20px 0;
     display: flex;
-    justify-content: center; /* Aproxima os itens ao centralizá-los */
-    gap: 10px; /* Define um espaço pequeno entre os itens */
+    justify-content: center;
+    gap: 10px;
     list-style: none;
 }
 
 .servico-item {
-    width: 32%; /* Aumenta levemente a largura para permitir fotos maiores */
+    width: 32%;
     text-align: center;
-    padding: 10px; /* Reduz o padding para aproximar os itens */
+    padding: 10px;
     box-sizing: border-box;
     border: none;
     transition: 400ms;
 }
 
 .servico-item:hover {
-    transform: translateY(-10px); /* Efeito de levitação no hover */
+    transform: translateY(-10px);
 }
 
 .servico-item h2 {
@@ -200,7 +197,7 @@ header {
 
 .servico-item img {
     width: 100%;
-    height: 350px; /* Aumenta a altura das fotos */
+    height: 350px;
     object-fit: cover;
     border-radius: 15px;
     margin: 10px 0;
@@ -209,7 +206,7 @@ header {
 }
 
 .servico-item:hover img {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra mais intensa no hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
     transform: scale(1.03);
 }
 
@@ -282,8 +279,8 @@ section p {
 }
 
 .unidade-card {
-    background-color: var(--black); /* Cor escura padrão da navbar */
-    color: #ffffff;
+    background-color: var(--black);
+    color: var(--white);
     width: 300px;
     border-radius: 4px;
     overflow: hidden;
@@ -293,7 +290,7 @@ section p {
 }
 
 .unidade-card:hover {
-    transform: translateY(-10px); /* Efeito de subida no card */
+    transform: translateY(-10px);
 }
 
 .unidade-img {
@@ -304,8 +301,8 @@ section p {
 }
 
 .unidade-card:hover .unidade-img {
-    transform: scale(1.05); /* Leve zoom na imagem ao subir */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Sombra no hover da imagem da unidade */
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
 .unidade-info {
@@ -314,15 +311,13 @@ section p {
 }
 
 .unidade-card:hover .unidade-info {
-    background-color: #252525; /* Tom de cinza escuro para o hover no card preto */
+    background-color: var(--dark-gray);
 }
-
-/* Marcador removido */
 
 .unidade-nome {
     font-size: 24px;
     font-weight: 900;
-    color: var(--mostarda); /* Tom Mostarda */
+    color: var(--mustard);
     margin-bottom: 15px;
     line-height: 1.1;
 }
@@ -347,7 +342,7 @@ section p {
     margin-top: 15px;
     font-size: 14px;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
     transition: opacity 0.3s;
 }
@@ -363,13 +358,12 @@ section p {
     justify-content: center;    
 }
 
-/* Layout Flex para Benefícios e Vídeo */
 .beneficios-flex-container {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinha verticalmente a lista e a imagem */
+    align-items: center;
     gap: 40px;
-    margin-bottom: 40px; /* Espaço antes do vídeo */
+    margin-bottom: 40px;
 }
 
 .beneficios-conteudo {
@@ -377,14 +371,14 @@ section p {
 }
 
 .img-beneficios {
-    width: 50%; /* Imagem ao lado da lista */
+    width: 50%;
     margin: 0;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .video-container {
-    width: 75%; /* Ajustado para 75% conforme solicitado */
-    margin: 20px auto 0; /* Centralizado */
+    width: 75%;
+    margin: 20px auto 0;
 }
 
 .lista-beneficios {
@@ -417,13 +411,13 @@ section p {
 
 .rodape {
     background-color: var(--black);
-    padding: 45px 0; /* Aumentado em 50% (de 30px para 45px) */
+    padding: 45px 0;
     color: var(--white);
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--dark-gray);
 }
 
 .rodape-container {
-    width: 90%; /* Mudado de 80vw para 90% */
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -438,8 +432,8 @@ section p {
 }
 
 .logo-rodape {
-    width: 45px; /* Logo aumentada em 50% (de 30px para 45px) */
-    filter: brightness(0) invert(1); /* Garante que a logo fique branca se for escura */
+    width: 45px;
+    filter: brightness(0) invert(1);
 }
 
 .copyright-texto {
@@ -463,7 +457,7 @@ section p {
 }
 
 .redes-sociais a, .link-topo {
-    color: var(--white) !important; /* Força a cor branca */
+    color: var(--white) !important;
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
@@ -472,7 +466,7 @@ section p {
 
 .redes-sociais a:hover, .link-topo:hover {
     opacity: 1;
-    color: var(--hover) !important;
+    color: var(--mustard) !important;
 }
 
 .link-topo {
