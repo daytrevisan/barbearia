@@ -1,3 +1,14 @@
+:root {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    --dark-gray: #252525;
+    --black: #121212;
+    --white: #FEFEFE;
+    --active: #5b1023;
+    --mustard: #E3A018;
+    --dark-mustard: #C68B10
+}
+
 .agendamento-principal {
     font-family: 'Poppins', sans-serif;
     background-color: var(--black);
@@ -5,16 +16,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Poppins", sans-serif; /* Garante Poppins em toda a seção principal */
+    font-family: "Poppins", sans-serif;
 }
 
 .agendamento-layout-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     width: 100%;
-    max-width: 100%; /* Ocupa toda a largura para a imagem iniciar na margem zero */
+    max-width: 100%;
     background-color: var(--black);
-    align-items: stretch; /* Garante que as colunas tenham a mesma altura */
+    align-items: stretch
 }
 
 /* Lado Esquerdo: Imagem iniciando na margem zero, sem cortes */
@@ -27,10 +38,10 @@
 
 .img-lateral {
     width: 100%;
-    height: 100%; /* Ocupa toda a altura do container definida pelo card */
-    object-fit: contain; /* Garante que a imagem não seja cortada e apareça inteira */
-    background-color: var(--black); /* Fundo preto para preencher espaços se necessário */
-    object-position: left center; /* Alinha a imagem à esquerda (margem zero) */
+    height: auto;
+    object-fit: contain;
+    background-color: var(--black);
+    object-position: left center;
 }
 
 /* Lado Direito: Conteúdo com card branco */
@@ -67,11 +78,10 @@
     font-size: 1.3em;
     font-weight: bold;
     color: var(--black);
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--white);
     padding-top: 15px;
 }
 
-/* Estilos do Formulário */
 .input-group {
     margin-bottom: 12px;
 }
@@ -90,7 +100,7 @@
     border: 2px solid #ddd;
     border-radius: 10px;
     font-size: 15px;
-    font-family: 'Poppins', sans-serif; /* Garante Poppins nos inputs e select */
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     transition: 0.3s;
     background-color: #f9f9f9;
@@ -110,11 +120,11 @@
 
 /* Estilos do Calendário */
 .calendario-visual {
-    background: #f9f9f9;
+    background: var(--white);
     padding: 12px;
     border-radius: 15px;
     border: 1px solid #eee;
-    margin-bottom: 15px;
+    margin-bottom: 15px
 }
 
 .calendario-header {
@@ -161,7 +171,7 @@
 }
 
 .tabela-calendario td:hover:not(.dia-vazio) {
-    background-color: #eee;
+    background-color: var(--white);
 }
 
 .dia-selecionado {
@@ -202,7 +212,6 @@
     color: var(--black);
 }
 
-/* Botão Único de Finalização */
 #botao-finalizar {
     width: 100%;
     padding: 15px;
@@ -219,9 +228,74 @@
 }
 
 #botao-finalizar:hover {
-    background-color: #C68B10; /* Mostarda mais escuro, padronizado com a navbar */
+    background-color: var(--dark-mustard);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
+}
+
+.rodape {
+    background-color: var(--black);
+    padding: 45px 0;
+    color: var(--white);
+    border-top: 1px solid var(--dark-gray);
+}
+
+.rodape-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-rodape {
+    width: 45px;
+    filter: brightness(0) invert(1);
+}
+
+.copyright-texto {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.rodape-direita {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+}
+
+.redes-sociais a, .link-topo {
+    color: var(--white) !important;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.redes-sociais a:hover, .link-topo:hover {
+    opacity: 1;
+    color: var(--mustard) !important;
+}
+
+.link-topo {
+    font-size: 18px;
+    margin-left: 10px;
 }
 
 @media screen and (max-width: 1024px) {

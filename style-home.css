@@ -6,7 +6,7 @@
     --white: #FEFEFE;
     --active: #5b1023;
     --mustard: #E3A018;
-    --dark-mustard: #E3A018;
+    --dark-mustard: #C68B10
 }
 
 html {
@@ -31,14 +31,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 90%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 10px 0;
+    font-size: 10px
 }
 
 .navbar img, .logo {
-    width: 200px;
+    width: 150px;
 }
 
 .navbar-icons {
@@ -63,7 +64,7 @@ header {
 }
 
 .lista-link:hover {
-    color: var(--mostarda);
+    color: var(--mustard);
     text-decoration: none;
 }
 
@@ -73,17 +74,17 @@ header {
 
 /* Estilo para o botão de agendamento na navbar */
 .btn-agendamento {
-    background-color: var(--mostarda);
+    background-color: var(--mustard);
     color: var(--black) !important;
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     transition: all 0.3s ease;
 }
 
 .btn-agendamento:hover {
-    background-color: var(--dark-mustard);
+    background-color: var(--mustard);
     color: var(--black) !important;
     text-decoration: none !important;
     box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
@@ -92,7 +93,7 @@ header {
 
 .img-banner {
     width: 100%;
-    height: 500px;
+    height: auto;
     object-fit: fill;
     margin: 0 auto;
     display: block;
@@ -348,8 +349,8 @@ section p {
 }
 
 .unidade-agendar:hover {
-    text-decoration: underline;
-    opacity: 0.8;
+    color: var(--mustard);
+    opacity: 0.8
 }
 
 .icone-titulo {
