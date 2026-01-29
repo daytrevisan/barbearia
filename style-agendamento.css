@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Poppins", sans-serif; /* Garante Poppins em toda a seção principal */
 }
 
 .agendamento-layout-container {
@@ -94,6 +95,7 @@
     transition: 0.3s;
     background-color: #f9f9f9;
     color: var(--black);
+    font-family: "Poppins", sans-serif;
 }
 
 .input-padrao::placeholder {
@@ -213,11 +215,13 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
+    font-family: "Poppins", sans-serif;
 }
 
 #botao-finalizar:hover {
-    background-color: var(--hover);
+    background-color: #C68B10; /* Mostarda mais escuro, padronizado com a navbar */
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
 }
 
 @media screen and (max-width: 1024px) {

@@ -7,27 +7,10 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="./style-home.css">
     <link rel="stylesheet" href="./style-agendamento.css">
-    <link rel="icon" href="./img/favicon-barba.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Agendamento - Barber Shop</title>
-    <script>
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const unidade = urlParams.get('unidade');
-            if (unidade) {
-                const titulo = document.querySelector('.titulo-principal');
-                titulo.textContent = 'Agende seu Horário na Unidade ' + unidade;
-                
-                const select = document.getElementById('unidade-select');
-                if (select) {
-                    select.value = unidade;
-                }
-            }
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -39,8 +22,8 @@
                     <li class="lista"><a href="./index.html#sobre" class="lista-link">Sobre</a></li>
                     <li class="lista"><a href="./index.html#servicos" class="lista-link">Serviços</a></li>
                     <li class="lista"><a href="./index.html#beneficios" class="lista-link">Benefícios</a></li>
-                    <li class="lista"><a href="./index.html#unidades" class="lista-link">Nossas Unidades</a></li>
-                    <li class="lista"><a href="./agendamento.html" class="lista-link btn-agendamento">Agendamento Online</a></li>
+                    <li class="lista"><a href="./index.html#localizacao" class="lista-link">Localização</a></li>
+                    <li class="lista"><a href="./agendamento.html" class="lista-link">Agendamento</a></li>
                 </ul>
             </nav>
         </section>
@@ -61,16 +44,6 @@
                     <form id="form-agendamento">
                         <!-- Dados Pessoais -->
                         <div class="sessao-form">
-                            <div class="input-group">
-                                <label for="unidade-select">Unidade</label>
-                                <select id="unidade-select" class="input-padrao" required>
-                                    <option value="" disabled selected>Selecione a unidade</option>
-                                    <option value="Paulista">Barber Shop Paulista</option>
-                                    <option value="Pinheiros">Barber Shop Pinheiros</option>
-                                    <option value="Moema">Barber Shop Moema</option>
-                                </select>
-                            </div>
-
                             <div class="input-group">
                                 <label for="nome">Nome e sobrenome</label>
                                 <input type="text" id="nome" class="input-padrao" placeholder="Seu nome completo" required>
@@ -147,20 +120,8 @@
     </main>
 
     <footer class="rodape">
-        <div class="rodape-container">
-            <div class="rodape-esquerda">
-                <img src="./img/logo-barber-bg-black.png" alt="Logo da Barber Shop" class="logo-rodape">
-                <p class="copyright-texto">Barber Shop | Direitos Reservados</p>
-            </div>
-            <div class="rodape-direita">
-                <div class="redes-sociais">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
-                <a href="./index.html#home" class="link-topo"><i class="fas fa-chevron-up"></i></a>
-            </div>
-        </div>
+        <img src="./img/logo-barber-bg-black.png" alt="Logo da Barber Shop" id="logo">
+        <p id="copyright">&copy; Copyright Barber Shop - 2025</p>
     </footer>
 </body>
 </html>
