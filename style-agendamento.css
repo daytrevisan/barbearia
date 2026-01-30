@@ -355,7 +355,9 @@ select.input-padrao {
 }
 
 .modal-content {
-    background: url(".img/bg.jpg");
+    background: url("./img/bg.jpg");
+    background-size: cover;
+    background-position: center;
     padding: 30px;
     border-radius: 12px; /* Reduzido de 25px para 12px */
     max-width: 360px; /* Reduzido em 20% (de 450px para 360px) */
@@ -368,14 +370,16 @@ select.input-padrao {
 
 .modal-header {
     color: var(--active);
-    font-size: 1.5em;
+    font-size: 1.2em; /* Diminuído um pouco */
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .modal-header i {
-    display: inline;
-    font-size: 1.25em;
-    margin-bottom: 15px;
+    font-size: 1.2em;
     color: #28a745; /* Verde para sucesso */
 }
 
