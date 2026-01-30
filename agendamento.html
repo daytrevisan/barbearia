@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="./style-home.css">
     <link rel="stylesheet" href="./style-agendamento.css">
+    <link rel="icon" href="./img/favicon-head.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Agendamento - Barber Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Barber Shop</title>
 </head>
 <body>
-    <header>
+    <header id="agendamento">
         <section class="navbar">
             <img src="./img/logo-barber-bg-black.png" alt="Logo da Barbearia" id="logo">
             <nav class="navbar-icons">
@@ -22,8 +24,8 @@
                     <li class="lista"><a href="./index.html#sobre" class="lista-link">Sobre</a></li>
                     <li class="lista"><a href="./index.html#servicos" class="lista-link">Serviços</a></li>
                     <li class="lista"><a href="./index.html#beneficios" class="lista-link">Benefícios</a></li>
-                    <li class="lista"><a href="./index.html#localizacao" class="lista-link">Localização</a></li>
-                    <li class="lista"><a href="./agendamento.html" class="lista-link">Agendamento</a></li>
+                    <li class="lista"><a href="./index.html#unidades" class="lista-link">Unidades</a></li>
+                    <li class="lista"><a href="./agendamento.html" class="lista-link btn-agendamento">Agendamento</a></li>
                 </ul>
             </nav>
         </section>
@@ -97,7 +99,7 @@
                             </div>
                             
                             <div class="horarios-disponiveis">
-                                <h3>Horários Disponíveis</h3>
+                                <h3 class="subtitulo-principal">Horários Disponíveis</h3>
                                 <div class="grid-horarios">
                                     <button type="button" class="btn-horario">09:00</button>
                                     <button type="button" class="btn-horario">10:00</button>
@@ -131,7 +133,7 @@
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-tiktok"></i></a>
                 </div>
-                <a href="#home" class="link-topo"><i class="fas fa-chevron-up"></i></a>
+                <a href="#agendamento" class="link-topo"><i class="fas fa-chevron-up"></i></a>
             </div>
         </div>
     </footer>
