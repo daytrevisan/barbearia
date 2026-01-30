@@ -2,9 +2,9 @@
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     --dark-gray: #252525;
-    --black: #121212;
-    --white: #FEFEFE;
-    --active: #5b1023;
+    --black: #FEFEFE;
+    --white: #121212;
+    --active: #E3A018;
     --mustard: #E3A018;
     --dark-mustard: #C68B10
 }
@@ -58,7 +58,7 @@
 .agendamento-card-unico {
     width: 100%;
     max-width: 500px;
-    background-color: var(--white);
+    background-color: var(--black);
     border-radius: 12px; /* Reduzido de 25px para 12px */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
     padding: 40px;
@@ -68,7 +68,7 @@
     margin-bottom: 20px;
     text-align: center;
     display: block;
-    color: var(--active);
+    color: var(--mustard);
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -79,7 +79,7 @@
     font-size: 1.15em;
     font-weight: bold;
     color: var(--black);
-    border-top: 1px solid var(--white);
+    border-top: 1px solid var(--black);
 }
 
 .input-group {
@@ -104,7 +104,7 @@
     box-sizing: border-box;
     transition: 0.3s;
     background-color: #f9f9f9;
-    color: var(--black)
+    color: var(--white);
 }
 
 .input-padrao::placeholder {
@@ -112,14 +112,14 @@
 }
 
 .input-padrao:focus {
-    border-color: var(--active);
+    border-color: var(--mustard);
     outline: none;
-    background-color: var(--white);
+    background-color: var(--black);
 }
 
 /* Estilos do Calendário */
 .calendario-visual {
-    background: var(--white);
+    background: var(--black);
     padding: 12px;
     border-radius: 15px;
     border: 1px solid #eee;
@@ -140,8 +140,8 @@
 }
 
 .cal-btn {
-    background: var(--black);
-    color: var(--white);
+    background: #121212;
+    color: #FEFEFE;
     border: none;
     padding: 4px 10px;
     border-radius: 6px;
@@ -158,7 +158,7 @@
 
 .tabela-calendario th {
     padding: 4px;
-    color: var(--active);
+    color: var(--mustard);
     font-weight: bold;
 }
 
@@ -175,8 +175,8 @@
 }
 
 .dia-selecionado {
-    background-color: var(--active) !important;
-    color: var(--white) !important;
+    background-color: var(--mustard) !important;
+    color: var(--black) !important;
     font-weight: bold;
 }
 
@@ -197,7 +197,7 @@
 .btn-horario {
     padding: 8px;
     border: 1px solid #ddd;
-    background: var(--white);
+    background: var(--black);
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: bold;
@@ -214,16 +214,16 @@
 }
 
 .btn-horario.horario-selecionado {
-    background-color: var(--active);
-    color: var(--white);
-    border-color: var(--active);
+    background-color: var(--mustard);
+    color: var(--black);
+    border-color: var(--mustard);
 }
 
 #botao-finalizar {
     width: 100%;
     padding: 15px;
-    background-color: var(--active);
-    color: var(--white);
+    background-color: var(--mustard);
+    color: var(--black);
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -242,9 +242,9 @@
 }
 
 .rodape {
-    background-color: var(--black);
+    background-color: #121212; /* Mantendo o rodapé escuro para contraste */
     padding: 45px 0;
-    color: var(--white);
+    color: #FEFEFE;
     border-top: 1px solid var(--dark-gray);
 }
 
@@ -273,7 +273,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
-    color: var(--white);
+    color: #FEFEFE;
     opacity: 0.8;
 }
 
@@ -289,7 +289,7 @@
 }
 
 .redes-sociais a, .link-topo {
-    color: var(--white) !important;
+    color: #FEFEFE !important;
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
@@ -369,7 +369,7 @@ select.input-padrao {
 }
 
 .modal-header {
-    color: var(--active);
+    color: var(--mustard);
     font-size: 1.2em; /* Diminuído um pouco */
     margin-bottom: 15px;
     display: flex;
@@ -389,7 +389,7 @@ select.input-padrao {
 }
 
 .modal-body {
-    color: var(--black);
+    color: #FEFEFE; /* Branco para legibilidade sobre o fundo escuro */
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 30px;
@@ -398,17 +398,17 @@ select.input-padrao {
 
 .modal-body p {
     margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 5px;
 }
 
 .modal-body strong {
-    color: var(--active);
+    color: var(--mustard);
 }
 
 .btn-modal-fechar {
-    background-color: var(--active);
-    color: var(--white);
+    background-color: var(--mustard);
+    color: #121212; /* Preto para contraste no botão mostarda */
     border: none;
     padding: 12px 30px;
     border-radius: 10px;
