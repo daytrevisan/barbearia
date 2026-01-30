@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Barber Shop</title>
+    <title>Barber Shop - Agendamento</title>
 </head>
 <body>
     <header id="agendamento">
@@ -44,6 +44,19 @@
                     <h1 class="titulo-principal">Agende seu Horário</h1>
                     
                     <form id="form-agendamento">
+                        <!-- Seleção de Unidade -->
+                        <div class="sessao-form">
+                            <div class="input-group">
+                                <label for="unidade">Selecione a Unidade</label>
+                                <select id="unidade" class="input-padrao" required>
+                                    <option value="" disabled selected>Escolha uma unidade</option>
+                                    <option value="Paulista">BARBER SHOP PAULISTA</option>
+                                    <option value="Pinheiros">BARBER SHOP PINHEIROS</option>
+                                    <option value="Moema">BARBER SHOP MOEMA</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <!-- Dados Pessoais -->
                         <div class="sessao-form">
                             <div class="input-group">
@@ -78,22 +91,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="dia-vazio"></td><td class="dia-vazio"></td><td class="dia-vazio"></td><td class="dia-vazio"></td>
-                                            <td>1</td><td>2</td><td>3</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
-                                        </tr>
-                                        <tr>
-                                            <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
-                                        </tr>
-                                        <tr>
-                                            <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td class="dia-selecionado">23</td><td>24</td>
-                                        </tr>
-                                        <tr>
-                                            <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
-                                        </tr>
+                                        <!-- Gerado via JavaScript -->
                                     </tbody>
                                 </table>
                             </div>
@@ -137,5 +135,6 @@
             </div>
         </div>
     </footer>
+    <script src="script-agendamento.js"></script>
 </body>
 </html>
