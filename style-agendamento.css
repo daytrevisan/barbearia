@@ -59,7 +59,7 @@
     width: 100%;
     max-width: 500px;
     background-color: var(--white);
-    border-radius: 25px;
+    border-radius: 12px; /* Reduzido de 25px para 12px */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
     padding: 40px;
 }
@@ -356,9 +356,9 @@ select.input-padrao {
 
 .modal-content {
     background-color: var(--white);
-    padding: 40px;
-    border-radius: 25px;
-    max-width: 450px;
+    padding: 30px;
+    border-radius: 12px; /* Reduzido de 25px para 12px */
+    max-width: 360px; /* Reduzido em 20% (de 450px para 360px) */
     width: 90%;
     text-align: center;
     position: relative;
@@ -368,14 +368,20 @@ select.input-padrao {
 
 .modal-header {
     color: var(--active);
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
 .modal-header i {
     display: block;
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #28a745; /* Verde para sucesso */
+}
+
+.modal-logo {
+    width: 80px;
+    margin-bottom: 15px;
 }
 
 .modal-body {
