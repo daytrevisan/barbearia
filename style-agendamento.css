@@ -169,13 +169,14 @@
     transition: 0.3s;
 }
 
-.tabela-calendario td:hover:not(.dia-vazio) {
-    background-color: var(--white);
+.tabela-calendario td:hover:not(.dia-vazio):not(.dia-selecionado) {
+    background-color: var(--mustard);
+    color: var(--black);
 }
 
 .dia-selecionado {
     background-color: var(--active) !important;
-    color: var(--white);
+    color: var(--white) !important;
     font-weight: bold;
 }
 
@@ -206,7 +207,7 @@
     color: var(--black);
 }
 
-.btn-horario:hover {
+.btn-horario:hover:not(.horario-selecionado) {
     background-color: var(--mustard);
     border-color: var(--mustard);
     color: var(--black);
@@ -334,9 +335,45 @@ select.input-padrao {
 }
 
 .cal-btn:hover {
-    background-color: var(--active);
+    background-color: var(--mustard);
+    color: var(--black);
 }
 
-.tabela-calendario td:not(.dia-vazio):hover {
-    background-color: #f0f0f0;
+/* Estilos do Acordeão de Confirmação */
+.acordeao-confirmacao {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    border: 2px solid var(--active);
+    border-radius: 12px;
+    overflow: hidden;
+    display: none; /* Escondido por padrão */
+    animation: slideDown 0.4s ease-out;
+}
+
+.acordeao-header {
+    background-color: var(--active);
+    color: var(--white);
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.acordeao-corpo {
+    padding: 20px;
+    color: var(--black);
+    line-height: 1.6;
+}
+
+.acordeao-corpo p {
+    margin-bottom: 8px;
+}
+
+.acordeao-corpo strong {
+    color: var(--active);
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

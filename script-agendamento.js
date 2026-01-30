@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnAnterior = document.querySelectorAll('.cal-btn')[0];
     const btnProximo = document.querySelectorAll('.cal-btn')[1];
     const selectUnidade = document.getElementById('unidade');
+    const formAgendamento = document.getElementById('form-agendamento');
+    const acordeaoConfirmacao = document.getElementById('confirmacao-agendamento');
 
     const meses = [
         "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
@@ -12,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let mesAtual = 0; // Janeiro
     const anoAtual = 2026;
+    let diaSelecionado = null;
+    let horarioSelecionado = null;
 
     function gerarCalendario(mes, ano) {
         tabelaCorpo.innerHTML = '';
@@ -33,9 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     celula.classList.add('dia-vazio');
                 } else {
                     celula.textContent = data;
+                    const diaAtualLoop = data;
                     celula.addEventListener('click', () => {
                         document.querySelectorAll('.tabela-calendario td').forEach(td => td.classList.remove('dia-selecionado'));
                         celula.classList.add('dia-selecionado');
+                        diaSelecionado = `${diaAtualLoop} de ${meses[mes]} de ${ano}`;
                     });
                     data++;
                 }
@@ -78,7 +84,33 @@ document.addEventListener('DOMContentLoaded', () => {
         botao.addEventListener('click', () => {
             botoesHorario.forEach(b => b.classList.remove('horario-selecionado'));
             botao.classList.add('horario-selecionado');
+            horarioSelecionado = botao.textContent;
         });
+    });
+
+    // Lógica de Finalização (Acordeão)
+    formAgendamento.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const unidade = selectUnidade.options[selectUnidade.selectedIndex].text;
+
+        if (!diaSelecionado || !horarioSelecionado) {
+            alert('Por favor, selecione um dia e um horário antes de finalizar.');
+            return;
+        }
+
+        // Preencher resumo
+        document.getElementById('resumo-nome').textContent = nome;
+        document.getElementById('resumo-unidade').textContent = unidade;
+        document.getElementById('resumo-data').textContent = diaSelecionado;
+        document.getElementById('resumo-horario').textContent = horarioSelecionado;
+
+        // Mostrar acordeão
+        acordeaoConfirmacao.style.display = 'block';
+        
+        // Scroll suave para o acordeão
+        acordeaoConfirmacao.scrollIntoView({ behavior: 'smooth' });
     });
 
     gerarCalendario(mesAtual, anoAtual);
