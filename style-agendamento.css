@@ -355,7 +355,7 @@ select.input-padrao {
 }
 
 .modal-content {
-    background-color: var(--white);
+    background: url(".img/bg.jpg");
     padding: 30px;
     border-radius: 12px; /* Reduzido de 25px para 12px */
     max-width: 360px; /* Reduzido em 20% (de 450px para 360px) */
@@ -373,8 +373,8 @@ select.input-padrao {
 }
 
 .modal-header i {
-    display: block;
-    font-size: 2.5em;
+    display: inline;
+    font-size: 1.25em;
     margin-bottom: 15px;
     color: #28a745; /* Verde para sucesso */
 }
