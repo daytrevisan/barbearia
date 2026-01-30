@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnProximo = document.querySelectorAll('.cal-btn')[1];
     const selectUnidade = document.getElementById('unidade');
     const formAgendamento = document.getElementById('form-agendamento');
-    const acordeaoConfirmacao = document.getElementById('confirmacao-agendamento');
+    const modalConfirmacao = document.getElementById('modal-confirmacao');
+    const btnFecharModal = document.getElementById('fechar-modal');
 
     const meses = [
         "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Lógica de Finalização (Acordeão)
+    // Lógica de Finalização (Modal)
     formAgendamento.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -100,17 +101,26 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Preencher resumo
+        // Preencher resumo no modal
         document.getElementById('resumo-nome').textContent = nome;
         document.getElementById('resumo-unidade').textContent = unidade;
         document.getElementById('resumo-data').textContent = diaSelecionado;
         document.getElementById('resumo-horario').textContent = horarioSelecionado;
 
-        // Mostrar acordeão
-        acordeaoConfirmacao.style.display = 'block';
-        
-        // Scroll suave para o acordeão
-        acordeaoConfirmacao.scrollIntoView({ behavior: 'smooth' });
+        // Mostrar modal
+        modalConfirmacao.style.display = 'flex';
+    });
+
+    // Fechar modal e redirecionar
+    btnFecharModal.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
+    // Fechar ao clicar fora do conteúdo do modal
+    modalConfirmacao.addEventListener('click', (e) => {
+        if (e.target === modalConfirmacao) {
+            window.location.href = 'index.html';
+        }
     });
 
     gerarCalendario(mesAtual, anoAtual);
