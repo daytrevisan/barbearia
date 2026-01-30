@@ -72,5 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Lógica para seleção de horários
+    const botoesHorario = document.querySelectorAll('.btn-horario');
+    botoesHorario.forEach(botao => {
+        botao.addEventListener('click', () => {
+            botoesHorario.forEach(b => b.classList.remove('horario-selecionado'));
+            botao.classList.add('horario-selecionado');
+        });
+    });
+
     gerarCalendario(mesAtual, anoAtual);
 });
