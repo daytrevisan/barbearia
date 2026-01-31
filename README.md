@@ -1,8 +1,8 @@
 # 💈 Barber Shop
 
-Este é um projeto de um site institucional para uma barbearia fictícia, desenvolvido como parte da minha trilha de aprendizado em desenvolvimento Front-end. O foco principal foi dominar as bases de estruturação com HTML5 e estilização avançada com CSS3.
+Este é um projeto de um site institucional da barbearia Barber Shop. O foco técnico foi a prática das bases de estruturação com HTML5, estilização avançada com CSS3, utilização de modal com Javascript no front-end e funcionalidade de agendamento com Node.js.
 
-<img width="1894" height="900" alt="image" src="https://github.com/user-attachments/assets/2ff9d6b5-d4f1-41d6-a98b-f27dbf043ffb" />
+<img width="1896" height="876" alt="image" src="https://github.com/user-attachments/assets/69327680-dcf9-49f2-b4a7-fd54ec9ef9d8" />
 
 
 ## 🔗 Demonstração
@@ -20,6 +20,8 @@ O projeto foi construído utilizando as seguintes tecnologias:
   - Transições e efeitos de hover para melhor experiência do usuário.
   - Design responsivo com `@media queries`.
   - Uso de pseudo-classes e pseudo-elementos.
+- **Javascript**
+  - Modal. 
 
 ## 🛠️ Funcionalidades e Aprendizados
 
@@ -28,15 +30,14 @@ Durante o desenvolvimento deste projeto, pude colocar em prática conceitos fund
 - **Semântica HTML:** Utilização correta de tags como `header`, `nav`, `main`, `section` e `footer`.
 - **Formulários:** Criação de uma página de contato com campos de entrada, áreas de texto e botões de envio estilizados.
 - **Tabelas:** Implementação de tabelas para exibição de horários de funcionamento.
-- **Interatividade:** Adição de mapas dinâmicos (Google Maps) e vídeos incorporados (YouTube).
+- **Interatividade:** Adição de vídeos incorporados (YouTube).
 - **SEO & Acessibilidade:** Foco em boas práticas para motores de busca e leitores de tela.
 
 ## 📂 Estrutura do Projeto
 
-O site é composto por três páginas principais:
-1. **Home:** Apresentação da barbearia, missão e localização.
-2. **Produtos:** Catálogo de serviços com preços e descrições.
-3. **Contato:** Formulário para agendamentos e informações de contato.
+O site é composto por duas páginas principais:
+1. **Home:** Apresentação da barbearia, serviços, benefícios e unidades.
+2. **Agendamento:** Possibilidade de agendamento de dia e horário para visita.
 
 ---
 
