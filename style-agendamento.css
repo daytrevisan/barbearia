@@ -27,7 +27,7 @@
     align-items: stretch;
 }
 
-/* Lado Esquerdo: Imagem */
+/* Lado Esquerdo: Imagem ampliada para cortar na barra vermelha */
 .agendamento-coluna-imagem {
     grid-column: 1;
     background-color: var(--black);
@@ -36,11 +36,11 @@
 }
 
 .img-lateral {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+    width: 120%; /* Aumentado para permitir o corte */
+    height: 100%;
+    object-fit: cover;
     background-color: var(--black);
-    object-position: left center;
+    object-position: -50px center; /* Deslocado para a esquerda para cortar na barra vermelha */
 }
 
 /* Lado Direito: Conteúdo com card branco e margem à direita */
@@ -51,13 +51,13 @@
     justify-content: center;
     align-items: center;
     padding: 40px;
-    padding-right: 80px; /* Adicionando margem do lado direito */
+    padding-right: 80px;
     background-color: var(--black);
 }
 
 .agendamento-card-unico {
     width: 100%;
-    max-width: 400px; /* Reduzido em 20% (de 500px para 400px) */
+    max-width: 400px;
     background-color: var(--white);
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
@@ -66,20 +66,21 @@
 
 .titulo-principal {
     margin-bottom: 20px;
+    padding-bottom: 15px; /* Aumentado padding-bottom */
     text-align: center;
     display: block;
-    color: var(--active); /* Alterado para bordô */
+    color: var(--active);
     font-size: 1.5em;
     font-weight: bold;
 }
 
 .subtitulo-principal {
     margin: 15px 0;
-    padding-top: 30px; /* Aumentado padding-top para maior respiro */
+    padding-top: 15px; /* Diminuído espaçamento superior (era 30px) */
     font-size: 1.15em;
     font-weight: bold;
     color: var(--black);
-    border-top: none; /* Removida a linha acima */
+    border-top: none;
 }
 
 .input-group {
@@ -160,7 +161,7 @@
 
 .tabela-calendario th {
     padding: 4px;
-    color: var(--active); /* Alterado para bordô */
+    color: var(--active);
     font-weight: bold;
 }
 
@@ -202,7 +203,7 @@
     background: var(--white);
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal; /* Removido negrito */
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
@@ -298,6 +299,10 @@
     .agendamento-coluna-imagem {
         height: 350px;
     }
+    .img-lateral {
+        width: 100%;
+        object-position: center;
+    }
     .agendamento-coluna-conteudo-wrapper {
         padding: 30px 20px;
     }
@@ -329,7 +334,7 @@ select.input-padrao {
 }
 
 .modal-content {
-    background-color: var(--white); /* Fundo branco padrão */
+    background-color: var(--white);
     padding: 30px;
     border-radius: 12px;
     max-width: 360px;
@@ -341,7 +346,7 @@ select.input-padrao {
 }
 
 .modal-header {
-    color: var(--active); /* "Agendado" em bordô */
+    color: var(--active);
     font-size: 1.2em;
     margin-bottom: 15px;
     display: flex;
@@ -352,7 +357,7 @@ select.input-padrao {
 
 .modal-header i {
     font-size: 1.2em;
-    color: #28a745;
+    color: #28a745; /* Verde intuitivo */
 }
 
 .modal-logo {
@@ -361,7 +366,7 @@ select.input-padrao {
 }
 
 .modal-body {
-    color: var(--black); /* Texto em preto para fundo branco */
+    color: var(--black);
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 30px;
