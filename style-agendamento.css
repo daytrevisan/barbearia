@@ -58,8 +58,8 @@
 .agendamento-card-unico {
     width: 100%;
     max-width: 500px;
-    background-color: var(--black);
-    border-radius: 12px; /* Reduzido de 25px para 12px */
+    background-color: var(--white);
+    border-radius: 25px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
     padding: 40px;
 }
@@ -356,9 +356,9 @@ select.input-padrao {
 
 .modal-content {
     background-color: var(--white);
-    padding: 30px;
-    border-radius: 12px; /* Reduzido de 25px para 12px */
-    max-width: 360px; /* Reduzido em 20% (de 450px para 360px) */
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 450px;
     width: 90%;
     text-align: center;
     position: relative;
@@ -367,25 +367,15 @@ select.input-padrao {
 }
 
 .modal-header {
-    color: var(--mustard);
-    font-size: 1.2em; /* Diminuído um pouco */
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    color: var(--active);
+    font-size: 1.8em;
+    margin-bottom: 20px;
 }
 
 .modal-header i {
     display: block;
-    font-size: 2.5em;
-    margin-bottom: 15px;
-    color: #28a745; /* Verde para sucesso */
-}
-
-.modal-logo {
-    width: 80px;
-    margin-bottom: 15px;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 .modal-body {
