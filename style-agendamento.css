@@ -11,12 +11,11 @@
 
 .agendamento-principal {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--black);
+    background-color: var(--black); /* #121212 conforme definido no :root */
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Poppins", sans-serif;
 }
 
 .agendamento-layout-container {
@@ -25,26 +24,27 @@
     width: 100%;
     max-width: 100%;
     background-color: var(--black);
-    align-items: stretch
+    align-items: stretch;
 }
 
-/* Lado Esquerdo: Imagem iniciando na margem zero, sem cortes */
+/* Lado Esquerdo: Imagem corrigida com height auto para evitar deformação */
 .agendamento-coluna-imagem {
     grid-column: 1;
     background-color: var(--black);
     display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
 .img-lateral {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: auto; /* Corrigido para evitar deformação */
+    object-fit: contain; /* Garante que a imagem apareça inteira sem distorção */
     background-color: var(--black);
-    object-position: left center;
 }
 
-/* Lado Direito: Conteúdo com card branco */
+/* Lado Direito: Conteúdo com card branco e margem à direita */
 .agendamento-coluna-conteudo-wrapper {
     grid-column: 2;
     display: flex;
@@ -52,20 +52,22 @@
     justify-content: center;
     align-items: center;
     padding: 40px;
+    padding-right: 80px;
     background-color: var(--black);
 }
 
 .agendamento-card-unico {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     background-color: var(--white);
-    border-radius: 25px;
+    border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
     padding: 40px;
 }
 
 .titulo-principal {
     margin-bottom: 20px;
+    padding-bottom: 15px;
     text-align: center;
     display: block;
     color: var(--active);
@@ -75,11 +77,11 @@
 
 .subtitulo-principal {
     margin: 15px 0;
-    padding-top: 10px;
+    padding-top: 15px;
     font-size: 1.15em;
     font-weight: bold;
     color: var(--black);
-    border-top: 1px solid var(--white);
+    border-top: none;
 }
 
 .input-group {
@@ -104,15 +106,11 @@
     box-sizing: border-box;
     transition: 0.3s;
     background-color: #f9f9f9;
-    color: var(--black)
-}
-
-.input-padrao::placeholder {
-    font-family: 'Poppins', sans-serif;
+    color: var(--black);
 }
 
 .input-padrao:focus {
-    border-color: var(--active);
+    border-color: var(--mustard);
     outline: none;
     background-color: var(--white);
 }
@@ -123,7 +121,7 @@
     padding: 12px;
     border-radius: 15px;
     border: 1px solid #eee;
-    margin-bottom: 15px
+    margin-bottom: 15px;
 }
 
 .calendario-header {
@@ -146,13 +144,19 @@
     padding: 4px 10px;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.cal-btn:hover {
+    background-color: var(--mustard);
+    color: var(--black);
 }
 
 .tabela-calendario {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     color: var(--black);
 }
 
@@ -169,13 +173,14 @@
     transition: 0.3s;
 }
 
-.tabela-calendario td:hover:not(.dia-vazio) {
-    background-color: var(--white);
+.tabela-calendario td:hover:not(.dia-vazio):not(.dia-selecionado) {
+    background-color: var(--mustard);
+    color: var(--black);
 }
 
 .dia-selecionado {
     background-color: var(--active) !important;
-    color: var(--white);
+    color: var(--white) !important;
     font-weight: bold;
 }
 
@@ -199,24 +204,30 @@
     background: var(--white);
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
     color: var(--black);
 }
 
-.btn-horario:hover {
+.btn-horario:hover:not(.horario-selecionado) {
     background-color: var(--mustard);
     border-color: var(--mustard);
     color: var(--black);
 }
 
+.btn-horario.horario-selecionado {
+    background-color: var(--active);
+    color: var(--white);
+    border-color: var(--active);
+}
+
 #botao-finalizar {
     width: 100%;
     padding: 15px;
-    background-color: var(--active);
-    color: var(--white);
+    background-color: var(--mustard);
+    color: var(--black);
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -228,9 +239,15 @@
 }
 
 #botao-finalizar:hover {
-    background-color: var(--dark-mustard);
+    background-color: var(--mustard);
+    color: var(--black);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
+}
+
+#botao-finalizar:active {
+    background-color: var(--active);
+    color: var(--white);
 }
 
 .rodape {
@@ -249,12 +266,6 @@
     align-items: center;
 }
 
-.rodape-esquerda {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .logo-rodape {
     width: 45px;
     filter: brightness(0) invert(1);
@@ -267,17 +278,6 @@
     margin: 0;
     color: var(--white);
     opacity: 0.8;
-}
-
-.rodape-direita {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.redes-sociais {
-    display: flex;
-    gap: 15px;
 }
 
 .redes-sociais a, .link-topo {
@@ -293,25 +293,130 @@
     color: var(--mustard) !important;
 }
 
-.link-topo {
-    font-size: 18px;
-    margin-left: 10px;
-}
-
 @media screen and (max-width: 1024px) {
     .agendamento-layout-container {
         grid-template-columns: 1fr;
     }
-
     .agendamento-coluna-imagem {
         height: 350px;
     }
-
     .img-lateral {
+        width: 100%;
         object-position: center;
     }
-
     .agendamento-coluna-conteudo-wrapper {
         padding: 30px 20px;
     }
+}
+
+/* Ajustes adicionais para interatividade */
+select.input-padrao {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 15px;
+}
+
+/* Estilos do Modal de Confirmação */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 360px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    animation: modalAppear 0.3s ease-out;
+}
+
+.modal-header {
+    color: var(--active);
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-header h2 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.modal-header i {
+    font-size: 1.2em;
+    color: #28a745;
+}
+
+.modal-logo {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.modal-body {
+    color: var(--black);
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.modal-body p {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+}
+
+.modal-body strong {
+    color: var(--active);
+}
+
+.modal-label {
+    color: var(--mustard) !important;
+}
+
+.btn-modal-fechar {
+    background-color: var(--mustard);
+    color: var(--black);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-modal-fechar:hover {
+    background-color: var(--mustard);
+    color: var(--black);
+    transform: translateY(-2px);
+}
+
+.btn-modal-fechar:active {
+    background-color: var(--active);
+    color: var(--white);
+}
+
+@keyframes modalAppear {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
