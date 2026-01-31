@@ -11,7 +11,7 @@
 
 .agendamento-principal {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--black);
+    background-color: var(--black); /* #121212 conforme definido no :root */
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -27,20 +27,20 @@
     align-items: stretch;
 }
 
-/* Lado Esquerdo: Imagem corrigida para manter proporção e qualidade */
+/* Lado Esquerdo: Imagem corrigida com height auto para evitar deformação */
 .agendamento-coluna-imagem {
     grid-column: 1;
     background-color: var(--black);
     display: flex;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
 .img-lateral {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Preenche o container mantendo a proporção */
-    object-position: center; /* Centraliza a imagem para evitar distorção visual */
+    height: auto; /* Corrigido para evitar deformação */
+    object-fit: contain; /* Garante que a imagem apareça inteira sem distorção */
     background-color: var(--black);
 }
 
@@ -358,7 +358,7 @@ select.input-padrao {
 
 .modal-header h2 {
     font-weight: bold;
-    font-size: 1.2em; /* Reduzido em 2px (voltou ao tamanho original de 1.2em) */
+    font-size: 1.2em;
 }
 
 .modal-header i {
