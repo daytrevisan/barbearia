@@ -53,75 +53,77 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    btnAnterior.addEventListener('click', () => {
-        if (mesAtual > 0) {
-            mesAtual--;
-            gerarCalendario(mesAtual, anoAtual);
-        }
-    });
-
-    btnProximo.addEventListener('click', () => {
-        if (mesAtual < 11) {
-            mesAtual++;
-            gerarCalendario(mesAtual, anoAtual);
-        }
-    });
-
-    // Lógica para selecionar unidade via URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const unidadeParam = urlParams.get('unidade');
-    if (unidadeParam && selectUnidade) {
-        for (let i = 0; i < selectUnidade.options.length; i++) {
-            if (selectUnidade.options[i].value.toLowerCase() === unidadeParam.toLowerCase()) {
-                selectUnidade.selectedIndex = i;
-                break;
+    if (btnAnterior) {
+        btnAnterior.addEventListener('click', () => {
+            if (mesAtual > 0) {
+                mesAtual--;
+                gerarCalendario(mesAtual, anoAtual);
             }
-        }
+        });
+    }
+
+    if (btnProximo) {
+        btnProximo.addEventListener('click', () => {
+            if (mesAtual < 11) {
+                mesAtual++;
+                gerarCalendario(mesAtual, anoAtual);
+            }
+        });
     }
 
     // Lógica para seleção de horários
-    const botoesHorario = document.querySelectorAll('.btn-horario');
-    botoesHorario.forEach(botao => {
-        botao.addEventListener('click', () => {
-            botoesHorario.forEach(b => b.classList.remove('horario-selecionado'));
-            botao.classList.add('horario-selecionado');
-            horarioSelecionado = botao.textContent;
+    const gridHorarios = document.querySelector('.grid-horarios');
+    if (gridHorarios) {
+        gridHorarios.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-horario')) {
+                document.querySelectorAll('.btn-horario').forEach(b => b.classList.remove('horario-selecionado'));
+                e.target.classList.add('horario-selecionado');
+                horarioSelecionado = e.target.textContent;
+            }
         });
-    });
+    }
 
     // Lógica de Finalização (Modal)
-    formAgendamento.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (formAgendamento) {
+        formAgendamento.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        const nome = document.getElementById('nome').value;
-        const unidade = selectUnidade.options[selectUnidade.selectedIndex].text;
+            const nome = document.getElementById('nome').value;
+            const unidade = selectUnidade.options[selectUnidade.selectedIndex].text;
 
-        if (!diaSelecionado || !horarioSelecionado) {
-            alert('Por favor, selecione um dia e um horário antes de finalizar.');
-            return;
-        }
+            if (!diaSelecionado || !horarioSelecionado) {
+                alert('Por favor, selecione um dia e um horário antes de finalizar.');
+                return;
+            }
 
-        // Preencher resumo no modal
-        document.getElementById('resumo-nome').textContent = nome;
-        document.getElementById('resumo-unidade').textContent = unidade;
-        document.getElementById('resumo-data').textContent = diaSelecionado;
-        document.getElementById('resumo-horario').textContent = horarioSelecionado;
+            // Preencher resumo no modal
+            document.getElementById('resumo-nome').textContent = nome;
+            document.getElementById('resumo-unidade').textContent = unidade;
+            document.getElementById('resumo-data').textContent = diaSelecionado;
+            document.getElementById('resumo-horario').textContent = horarioSelecionado;
 
-        // Mostrar modal
-        modalConfirmacao.style.display = 'flex';
-    });
+            // Mostrar modal
+            if (modalConfirmacao) {
+                modalConfirmacao.style.display = 'flex';
+            }
+        });
+    }
 
     // Fechar modal e redirecionar
-    btnFecharModal.addEventListener('click', () => {
-        window.location.href = 'index.html';
-    });
+    if (btnFecharModal) {
+        btnFecharModal.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
 
     // Fechar ao clicar fora do conteúdo do modal
-    modalConfirmacao.addEventListener('click', (e) => {
-        if (e.target === modalConfirmacao) {
-            window.location.href = 'index.html';
-        }
-    });
+    if (modalConfirmacao) {
+        modalConfirmacao.addEventListener('click', (e) => {
+            if (e.target === modalConfirmacao) {
+                modalConfirmacao.style.display = 'none';
+            }
+        });
+    }
 
     gerarCalendario(mesAtual, anoAtual);
 });
