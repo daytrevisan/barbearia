@@ -16,7 +16,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Poppins", sans-serif;
 }
 
 .agendamento-layout-container {
@@ -25,10 +24,10 @@
     width: 100%;
     max-width: 100%;
     background-color: var(--black);
-    align-items: stretch
+    align-items: stretch;
 }
 
-/* Lado Esquerdo: Imagem iniciando na margem zero, sem cortes */
+/* Lado Esquerdo: Imagem */
 .agendamento-coluna-imagem {
     grid-column: 1;
     background-color: var(--black);
@@ -44,7 +43,7 @@
     object-position: left center;
 }
 
-/* Lado Direito: Conteúdo com card branco */
+/* Lado Direito: Conteúdo com card branco e margem à direita */
 .agendamento-coluna-conteudo-wrapper {
     grid-column: 2;
     display: flex;
@@ -52,12 +51,13 @@
     justify-content: center;
     align-items: center;
     padding: 40px;
+    padding-right: 80px; /* Adicionando margem do lado direito */
     background-color: var(--black);
 }
 
 .agendamento-card-unico {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px; /* Reduzido em 20% (de 500px para 400px) */
     background-color: var(--white);
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
@@ -68,18 +68,18 @@
     margin-bottom: 20px;
     text-align: center;
     display: block;
-    color: var(--mustard);
+    color: var(--active); /* Alterado para bordô */
     font-size: 1.5em;
     font-weight: bold;
 }
 
 .subtitulo-principal {
     margin: 15px 0;
-    padding-top: 10px;
+    padding-top: 30px; /* Aumentado padding-top para maior respiro */
     font-size: 1.15em;
     font-weight: bold;
     color: var(--black);
-    border-top: 1px solid var(--black);
+    border-top: none; /* Removida a linha acima */
 }
 
 .input-group {
@@ -107,10 +107,6 @@
     color: var(--black);
 }
 
-.input-padrao::placeholder {
-    font-family: 'Poppins', sans-serif;
-}
-
 .input-padrao:focus {
     border-color: var(--mustard);
     outline: none;
@@ -123,7 +119,7 @@
     padding: 12px;
     border-radius: 15px;
     border: 1px solid #eee;
-    margin-bottom: 15px
+    margin-bottom: 15px;
 }
 
 .calendario-header {
@@ -140,12 +136,18 @@
 }
 
 .cal-btn {
-    background: #121212;
-    color: #FEFEFE;
+    background: var(--black);
+    color: var(--white);
     border: none;
     padding: 4px 10px;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.cal-btn:hover {
+    background-color: var(--mustard);
+    color: var(--black);
 }
 
 .tabela-calendario {
@@ -158,7 +160,7 @@
 
 .tabela-calendario th {
     padding: 4px;
-    color: var(--mustard);
+    color: var(--active); /* Alterado para bordô */
     font-weight: bold;
 }
 
@@ -241,10 +243,15 @@
     box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
 }
 
+#botao-finalizar:active {
+    background-color: var(--active);
+    color: var(--white);
+}
+
 .rodape {
-    background-color: #121212;
+    background-color: var(--black);
     padding: 45px 0;
-    color: #FEFEFE;
+    color: var(--white);
     border-top: 1px solid var(--dark-gray);
 }
 
@@ -257,12 +264,6 @@
     align-items: center;
 }
 
-.rodape-esquerda {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .logo-rodape {
     width: 45px;
     filter: brightness(0) invert(1);
@@ -273,23 +274,12 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
-    color: #FEFEFE;
+    color: var(--white);
     opacity: 0.8;
 }
 
-.rodape-direita {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.redes-sociais {
-    display: flex;
-    gap: 15px;
-}
-
 .redes-sociais a, .link-topo {
-    color: #FEFEFE !important;
+    color: var(--white) !important;
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
@@ -301,24 +291,13 @@
     color: var(--mustard) !important;
 }
 
-.link-topo {
-    font-size: 18px;
-    margin-left: 10px;
-}
-
 @media screen and (max-width: 1024px) {
     .agendamento-layout-container {
         grid-template-columns: 1fr;
     }
-
     .agendamento-coluna-imagem {
         height: 350px;
     }
-
-    .img-lateral {
-        object-position: center;
-    }
-
     .agendamento-coluna-conteudo-wrapper {
         padding: 30px 20px;
     }
@@ -332,11 +311,6 @@ select.input-padrao {
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 15px;
-}
-
-.cal-btn:hover {
-    background-color: var(--mustard);
-    color: var(--black);
 }
 
 /* Estilos do Modal de Confirmação */
@@ -355,9 +329,7 @@ select.input-padrao {
 }
 
 .modal-content {
-    background: url("./img/bg.jpg");
-    background-size: cover;
-    background-position: center;
+    background-color: var(--white); /* Fundo branco padrão */
     padding: 30px;
     border-radius: 12px;
     max-width: 360px;
@@ -369,7 +341,7 @@ select.input-padrao {
 }
 
 .modal-header {
-    color: var(--mustard);
+    color: var(--active); /* "Agendado" em bordô */
     font-size: 1.2em;
     margin-bottom: 15px;
     display: flex;
@@ -389,7 +361,7 @@ select.input-padrao {
 }
 
 .modal-body {
-    color: #FEFEFE;
+    color: var(--black); /* Texto em preto para fundo branco */
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 30px;
@@ -398,17 +370,17 @@ select.input-padrao {
 
 .modal-body p {
     margin-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 5px;
 }
 
 .modal-body strong {
-    color: var(--mustard);
+    color: var(--active);
 }
 
 .btn-modal-fechar {
     background-color: var(--mustard);
-    color: #121212;
+    color: var(--black);
     border: none;
     padding: 12px 30px;
     border-radius: 10px;
@@ -421,6 +393,12 @@ select.input-padrao {
 .btn-modal-fechar:hover {
     background-color: var(--mustard);
     color: var(--black);
+    transform: translateY(-2px);
+}
+
+.btn-modal-fechar:active {
+    background-color: var(--active);
+    color: var(--white);
 }
 
 @keyframes modalAppear {
