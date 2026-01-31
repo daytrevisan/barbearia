@@ -2,9 +2,9 @@
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     --dark-gray: #252525;
-    --black: #FEFEFE;
-    --white: #121212;
-    --active: #E3A018;
+    --black: #121212;
+    --white: #FEFEFE;
+    --active: #5b1023;
     --mustard: #E3A018;
     --dark-mustard: #C68B10
 }
@@ -58,8 +58,8 @@
 .agendamento-card-unico {
     width: 100%;
     max-width: 500px;
-    background-color: var(--black);
-    border-radius: 12px; /* Reduzido de 25px para 12px */
+    background-color: var(--white);
+    border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
     padding: 40px;
 }
@@ -104,7 +104,7 @@
     box-sizing: border-box;
     transition: 0.3s;
     background-color: #f9f9f9;
-    color: var(--white);
+    color: var(--black);
 }
 
 .input-padrao::placeholder {
@@ -114,12 +114,12 @@
 .input-padrao:focus {
     border-color: var(--mustard);
     outline: none;
-    background-color: var(--black);
+    background-color: var(--white);
 }
 
 /* Estilos do Calendário */
 .calendario-visual {
-    background: var(--black);
+    background: var(--white);
     padding: 12px;
     border-radius: 15px;
     border: 1px solid #eee;
@@ -175,8 +175,8 @@
 }
 
 .dia-selecionado {
-    background-color: var(--mustard) !important;
-    color: var(--black) !important;
+    background-color: var(--active) !important;
+    color: var(--white) !important;
     font-weight: bold;
 }
 
@@ -197,7 +197,7 @@
 .btn-horario {
     padding: 8px;
     border: 1px solid #ddd;
-    background: var(--black);
+    background: var(--white);
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: bold;
@@ -214,9 +214,9 @@
 }
 
 .btn-horario.horario-selecionado {
-    background-color: var(--mustard);
-    color: var(--black);
-    border-color: var(--mustard);
+    background-color: var(--active);
+    color: var(--white);
+    border-color: var(--active);
 }
 
 #botao-finalizar {
@@ -242,7 +242,7 @@
 }
 
 .rodape {
-    background-color: #121212; /* Mantendo o rodapé escuro para contraste */
+    background-color: #121212;
     padding: 45px 0;
     color: #FEFEFE;
     border-top: 1px solid var(--dark-gray);
@@ -347,7 +347,7 @@ select.input-padrao {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    display: none; /* Escondido por padrão */
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -359,8 +359,8 @@ select.input-padrao {
     background-size: cover;
     background-position: center;
     padding: 30px;
-    border-radius: 12px; /* Reduzido de 25px para 12px */
-    max-width: 360px; /* Reduzido em 20% (de 450px para 360px) */
+    border-radius: 12px;
+    max-width: 360px;
     width: 90%;
     text-align: center;
     position: relative;
@@ -370,7 +370,7 @@ select.input-padrao {
 
 .modal-header {
     color: var(--mustard);
-    font-size: 1.2em; /* Diminuído um pouco */
+    font-size: 1.2em;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -380,7 +380,7 @@ select.input-padrao {
 
 .modal-header i {
     font-size: 1.2em;
-    color: #28a745; /* Verde para sucesso */
+    color: #28a745;
 }
 
 .modal-logo {
@@ -389,7 +389,7 @@ select.input-padrao {
 }
 
 .modal-body {
-    color: #FEFEFE; /* Branco para legibilidade sobre o fundo escuro */
+    color: #FEFEFE;
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 30px;
@@ -408,7 +408,7 @@ select.input-padrao {
 
 .btn-modal-fechar {
     background-color: var(--mustard);
-    color: #121212; /* Preto para contraste no botão mostarda */
+    color: #121212;
     border: none;
     padding: 12px 30px;
     border-radius: 10px;
