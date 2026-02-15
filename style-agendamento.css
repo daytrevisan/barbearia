@@ -1,5 +1,5 @@
 :root {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     --dark-gray: #252525;
     --black: #121212;
@@ -403,6 +403,7 @@ select.input-padrao {
     cursor: pointer;
     transition: 0.3s;
     text-transform: uppercase;
+    font-family: 'Poppins, sans serif';
 }
 
 .btn-modal-fechar:hover {
