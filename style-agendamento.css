@@ -321,7 +321,7 @@ select.input-padrao {
     background-size: 15px;
 }
 
-/* Estilos do Modal de Confirmação - CORRIGIDO PARA OVERLAY REAL */
+/* Estilos do Modal de Confirmação */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -332,7 +332,7 @@ select.input-padrao {
     display: none; /* Controlado via JS */
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Garante que fique acima de tudo */
+    z-index: 9999; /* Garante sobreposição */
     backdrop-filter: blur(8px);
 }
 
@@ -368,7 +368,7 @@ select.input-padrao {
 }
 
 .modal-logo {
-    width: 120px; /* Ajustado para ser proporcional */
+    width: 120px;
     height: auto;
     margin-bottom: 20px;
     display: block;

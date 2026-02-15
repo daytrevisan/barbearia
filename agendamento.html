@@ -116,7 +116,7 @@
                     </form>
 
                     <!-- Modal de Confirmação -->
-                    <div id="modal-confirmacao" class="modal-overlay">
+                    <div id="modal-confirmacao" class="modal-overlay" role="dialog" aria-modal="true"      aria-labelledby="modal-confirmacao-titulo">
                         <div class="modal-content">
                             <img src="./img/logo-barber-bg-white.png" alt="Logo Barber Shop" class="modal-logo">
                             <div class="modal-header">
@@ -124,12 +124,24 @@
                                 <i class="fas fa-check-circle"></i>
                             </div>
                             <div class="modal-body">
-                                <p><strong class="modal-label">Cliente:</strong> <span id="resumo-nome">-</span></p>
-                                <p><strong class="modal-label">Unidade:</strong> <span id="resumo-unidade">-</span></p>
-                                <p><strong class="modal-label">Data:</strong> <span id="resumo-data">-</span></p>
-                                <p><strong class="modal-label">Horário:</strong> <span id="resumo-horario">-</span></p>
+                                <h2 class="modal-label">Cliente:</h2> <span id="resumo-nome">-</span>
+                                <h2 class="modal-label">Unidade:</h2> <span id="resumo-unidade">-</span>
+                                <h2 class="modal-label">Data:</h2> <span id="resumo-data">-</span>
+                                <h2 class="modal-label">Horário:</h2> <span id="resumo-horario">-</span>
                             </div>
                             <button type="button" class="btn-modal-fechar" id="fechar-modal">Voltar para Home</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal de Erro -->
+                    <div id="modal-erro" class="modal-overlay" role="dialog" aria-modal="true"      aria-labelledby="modal-erro-titulo">
+                        <div class="modal-content">
+                            <img src="./img/logo-barber-bg-white.png" alt="Logo Barber Shop" class="modal-logo">
+                            <div class="alerta-modal-erro">
+                                <h2 id="modal-erro-titulo" class="modal-erro-label">Selecione dia e horário válidos para agendar</h2>
+                                <img src="/img/icon-alert.png">
+                            </div>
+                            <button type="button" class="btn-modal-erro-fechar" id="fechar-modal-erro">Voltar</button>
                         </div>
                     </div>
                 </section>
