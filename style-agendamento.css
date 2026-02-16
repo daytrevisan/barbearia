@@ -1,5 +1,5 @@
 :root {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     --dark-gray: #252525;
     --black: #121212;
@@ -321,7 +321,7 @@ select.input-padrao {
     background-size: 15px;
 }
 
-/* Estilos do Modal de Confirmação - CORRIGIDO PARA OVERLAY REAL */
+/* Estilos do Modal de Confirmação */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -332,7 +332,7 @@ select.input-padrao {
     display: none; /* Controlado via JS */
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Garante que fique acima de tudo */
+    z-index: 9999; /* Garante sobreposição */
     backdrop-filter: blur(8px);
 }
 
@@ -368,7 +368,7 @@ select.input-padrao {
 }
 
 .modal-logo {
-    width: 120px; /* Ajustado para ser proporcional */
+    width: 120px;
     height: auto;
     margin-bottom: 20px;
     display: block;
@@ -410,11 +410,68 @@ select.input-padrao {
     transition: 0.3s;
     text-transform: uppercase;
     width: 100%;
+    font-family: 'Poppins, sans serif' !important;
 }
 
 .btn-modal-fechar:hover {
     background-color: var(--dark-mustard);
     transform: translateY(-2px);
+}
+
+/* === Modal de erro === */
+
+#modal-erro {
+    display: none;
+}
+
+/* Caixa de alerta de erro */
+.modal-erro-alerta {
+    background-color: rgb(var(--dark-gray) / 0.08);
+    border: 1px solid --black;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+/* Texto do erro */
+.modal-erro-label {
+    color: var(--black);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+}
+
+#icon-alert {
+    width: 80px;
+}
+
+/* Botão fechar / voltar */
+.btn-modal-erro-fechar {
+    background-color: var(--mustard);
+    color: var(--black);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-modal-erro-fechar:hover {
+    background-color: var(--mustard);
+    color: var(--black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(227, 160, 24, 0.5);
+}
+
+.btn-modal-erro-fechar:active {
+    background-color: var(--active);
+    color: var(--white);
 }
 
 @keyframes modalAppear {
