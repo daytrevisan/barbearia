@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Cache de Elementos (DOM)
 
-    const mesAnoElement = document.querySelector('.mes-ano');
+    const mesAnoLabel = document.querySelector('.mes-ano');
     const tabelaCorpo = document.querySelector('.tabela-calendario tbody');
 
     const btnAnterior = document.querySelectorAll('.cal-btn')[0];
@@ -26,11 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
     ];
 
-    let mesAtual = 0; // Janeiro
-    const anoAtual = 2026;
+    // Hoje
+    const hoje = new Date();
+    let anoHoje = hoje.getFullYear();
+    let mesHoje = hoje.getMonth();
+    let diaHoje = hoje.getDate();
+    // let diaSemanaHoje = hoje.getDay();
+    // const validaDomingo = new Date(ano, mes, dia).getDay();
+    // let horaHoje = hoje.getHours();
 
-    let diaSelecionado = null;
-    let horarioSelecionado = null;
+    // Dia/hora selecionados
+    // const dataSelecionada = new Date();
+    let anoSelecionado = anoHoje;
+    let mesSelecionado = mesHoje;
+    let diaSelecionado = diaHoje;
+    let horarioSelecionado = "";
 
     // Funções utilitárias (Modais)
 
@@ -47,71 +57,106 @@ document.addEventListener('DOMContentLoaded', () => {
     function gerarCalendario(mes, ano) {
 
         tabelaCorpo.innerHTML = '';
-        mesAnoElement.textContent = `${meses[mes]} ${ano}`;
+        mesAnoLabel.textContent = `${meses[mes]} ${ano}`;
 
-        const primeiroDia = new Date(ano, mes, 1).getDay();
-        const diasNoMes = new Date(ano, mes + 1, 0).getDate();
+        const primeiroDiaSemana = new Date(ano, mes, 1).getDay();
+        const maxSemanasMes = 6; // Máximo semanas possíveis no mês
+        const totalDiasSemana = 7;
+        const totalDiasMes = new Date(ano, mes + 1, 0).getDate(); // Último dia mês atual
 
-        let data = 1;
+        // const primeiroDiaMes = new Date().getDate();
+        // const ultimoDiaMes = totalDiasMes;
+        let contadorDia = 1;
 
-        for (let i = 0; i < 6; i++) {
+        for (let semanaCalendario = 0; semanaCalendario < maxSemanasMes; semanaCalendario++) {
+            const semana = document.createElement('tr');
 
-            const linha = document.createElement('tr');
+            for (let diaSemanaCalendario = 0; diaSemanaCalendario < totalDiasSemana; diaSemanaCalendario++) {
+                const dia = document.createElement('td');
+                
+                // Dias do mês anterior
+                if (semanaCalendario === 0 && diaSemanaCalendario < primeiroDiaSemana) {
+                    dia.classList.add('dia-vazio');
 
-            for (let j = 0; j < 7; j++) {
+                // Dias do mês corrente  
+                } else if (contadorDia <= totalDiasMes) {
+                    dia.textContent = contadorDia;
 
-                const celula = document.createElement('td');
+                    const diaAtualLoop = contadorDia;
 
-                if (i === 0 && j < primeiroDia) {
-                    celula.classList.add('dia-vazio');
-
-                } else if (data > diasNoMes) {
+                    // Dias passados
+                    if(
+                        (ano < anoHoje) ||
+                        (ano === anoHoje && mes < mesHoje) ||
+                        (ano === anoHoje && mes === mesHoje && contadorDia <= diaHoje)
+                    ) {
+                        dia.classList.add('dia-invalido')
+                    }
                     
-                    if (j === 0 && data > diasNoMes) break; 
-                    celula.classList.add('dia-vazio');
+                    // Domingos
+                    const diaSemana = new Date(ano, mes, contadorDia).getDay();
+                    if (diaSemana === 0) {
+                        dia.classList.add('dia-invalido');
+                    }
 
-                } else {
-                    celula.textContent = data;
-                    const diaAtualLoop = data;
-
-                    celula.addEventListener('click', () => {
+                    dia.addEventListener('click', () => {
                         document
                         .querySelectorAll('.tabela-calendario td')
                         .forEach(td => td.classList.remove('dia-selecionado'));
 
-                        celula.classList.add('dia-selecionado');
+                        dia.classList.add('dia-selecionado');
 
                         diaSelecionado = `${diaAtualLoop} de ${meses[mes]} de ${ano}`;
                     });
 
-                    data++;
-                }
+                    contadorDia++;
 
-                linha.appendChild(celula);
+                } else if (contadorDia > totalDiasMes) {
+                    dia.classList.add('dia-vazio');
+                }    
+                    
+                semana.appendChild(dia);
             }
 
-            tabelaCorpo.appendChild(linha);
-            if (data > diasNoMes) break;
+            tabelaCorpo.appendChild(semana);            
+            
         }
+        
     }
 
     // Navegação pelos meses
 
     if (btnAnterior) {
         btnAnterior.addEventListener('click', () => {
-            if (mesAtual > 0) {
-                mesAtual--;
-                gerarCalendario(mesAtual, anoAtual);
+        
+            if (anoSelecionado > anoHoje || (anoSelecionado === anoHoje && mesSelecionado > mesHoje)) {
+                mesSelecionado--;
+
+                if (mesSelecionado < 0) {
+                    mesSelecionado = 11;
+                    anoSelecionado--;
+                }
+
+                gerarCalendario(mesSelecionado, anoSelecionado);
             }
+
         });
     }
 
     if (btnProximo) {
         btnProximo.addEventListener('click', () => {
-            if (mesAtual < 11) {
-                mesAtual++;
-                gerarCalendario(mesAtual, anoAtual);
+            
+            if(mesSelecionado <= 6) {
+                mesSelecionado++;
+
+                if (mesSelecionado > 11) {
+                    mesSelecionado = 0;
+                    anoSelecionado++;
+                }
+    
+                gerarCalendario(mesSelecionado, anoSelecionado);
             }
+
         });
     }
 
@@ -146,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Validação
             if (!diaSelecionado || !horarioSelecionado) {
                 abrirModal(modalErro);
-                return
+                return               
             }
 
             // Preencher resumo Agendamento
@@ -183,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Init
-    gerarCalendario(mesAtual, anoAtual);
+    // Renderização Calendário
+    gerarCalendario(mesSelecionado, anoSelecionado);
     
 });
