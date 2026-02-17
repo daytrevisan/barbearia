@@ -1,7 +1,8 @@
 :root {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    --dark-gray: #252525;
+    --dark-grey: #252525;
+    --light-grey: #cccccc;
     --black: #121212;
     --white: #FEFEFE;
     --active: #5b1023;
@@ -80,9 +81,9 @@
 .subtitulo-principal {
     margin: 15px 0;
     padding-top: 15px;
-    font-size: 1.15em;
+    font-size: 1em;
     font-weight: bold;
-    color: var(--black);
+    color: var(--active);
     border-top: none;
 }
 
@@ -135,7 +136,7 @@
 
 .mes-ano {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 0.9em;
     color: var(--black);
 }
 
@@ -206,7 +207,7 @@
     background: var(--white);
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    font-weight: normal; /* Sem negrito conforme solicitado */
+    font-weight: normal;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
@@ -256,7 +257,7 @@
     background-color: var(--black);
     padding: 45px 0;
     color: var(--white);
-    border-top: 1px solid var(--dark-gray);
+    border-top: 1px solid var(--dark-grey);
 }
 
 .rodape-container {
@@ -319,6 +320,11 @@ select.input-padrao {
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 15px;
+}
+
+.dia-invalido {
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 /* Estilos do Modal de Confirmação */
@@ -403,14 +409,15 @@ select.input-padrao {
     background-color: var(--mustard);
     color: var(--black);
     border: none;
-    padding: 14px 35px;
+    padding: 14px 30px;
     border-radius: 12px;
     font-weight: bold;
+    font-size: 14px;
     cursor: pointer;
     transition: 0.3s;
     text-transform: uppercase;
     width: 100%;
-    font-family: 'Poppins, sans serif' !important;
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn-modal-fechar:hover {
@@ -426,7 +433,7 @@ select.input-padrao {
 
 /* Caixa de alerta de erro */
 .modal-erro-alerta {
-    background-color: rgb(var(--dark-gray) / 0.08);
+    background-color: rgb(var(--dark-grey) / 0.08);
     border: 1px solid --black;
     padding: 15px;
     border-radius: 10px;
@@ -455,6 +462,7 @@ select.input-padrao {
     padding: 14px 30px;
     border-radius: 12px;
     font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
     text-transform: uppercase;
